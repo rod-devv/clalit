@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>topbar component</title>
+  </head>
+
+  <style>
+    .rounded {
+      border-radius: 20px;
+
+      padding: 8px 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .sidebar-icon {
+      margin-right: 30px;
+      font-size: 40px;
+      color: #2d94bd;
+    }
+
+    .logo {
+      margin-right: 50px;
+      height: 50px;
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      padding: 15px 0;
+      background: #ffffff;
+      padding: 15px 0;
+      width: 100vw;
+      z-index: 1000;
+    }
+
+    .topbar-left {
+      flex: 3;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+    }
+
+    .topside-btn {
+      color: black;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+      background: none;
+    }
+
+    .topbar-center {
+      flex: 3;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn1 {
+      background: #3a73b4 !important;
+      color: rgb(255, 255, 255);
+      transition: background 0.3s;
+      font-weight: bold;
+      padding: 10px 25px !important;
+    }
+
+    .btn1:hover {
+      background: #0953a7 !important;
+      color: white;
+    }
+
+    .btn2 {
+      background: #058625 !important;
+      color: white;
+      transition: background 0.3s;
+      font-weight: bold;
+      /* margin: 0 10px; */
+      /* padding: 10px; */
+    }
+    #contact {
+      margin: 0 10px;
+      padding: 10px 25px;
+    }
+
+    .btn2:hover {
+      background: #045a19 !important;
+      color: white;
+    }
+
+    .topbar-right {
+      flex: 4;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      align-items: center;
+    }
+
+    #user-name {
+      /* margin-top: 35px; */
+      background: #e3f6f8;
+      padding: 10px;
+      margin-right: 10px;
+      border-radius: 10px;
+    }
+
+    #line-col-small {
+      border-right: 1px solid rgb(228, 228, 228);
+      height: 30px;
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+  </style>
+  <body>
+    <div class="topbar">
+      <div class="topbar-left">
+        <img src="person-icon.png" alt="Profile" class="icon" />
+        <button class="topside-btn">العربية</button>
+        <button class="topside-btn">Русский</button>
+        <button class="topside-btn">English</button>
+        <button class="topside-btn">עברית</button>
+      </div>
+      <div class="topbar-center">
+        <button class="rounded btn1"><i class="fa fa-search"></i></button>
+        <button id="contact" class="rounded btn2">Contact</button>
+        <button class="rounded btn1">Family Center</button>
+      </div>
+
+      <div class="topbar-right">
+        <p id="user-name">Hi, danny dan</p>
+        <div id="line-col-small"></div>
+        <img src="../public/imgs/logo_2.png" alt="Logo" class="logo" />
+        <i class="fa-solid fa-bars sidebar-icon" alt="Logo" id="menu-btn"></i>
+      </div>
+    </div>
+
+    <script></script>
+  </body>
+</html>

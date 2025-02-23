@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>main-page section 6</title>
+    <style>
+      /* Full-width container */
+      .s6-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 50px 0;
+        text-align: center;
+        font-family: sans-serif;
+        background: #fff;
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Row layout for sections */
+      .s6-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      /* Each section */
+      .s6-section {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 270px;
+        height: 270px;
+        margin: 20px 10px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        box-sizing: border-box;
+        transition: all 0.5s;
+        background: transparent;
+      }
+
+      /* Background circle added via ::before */
+      .s6-section::before {
+        content: "";
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        background-color: #1d92c0;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        transition: opacity 0.5s ease; /* Smooth fade-out transition */
+      }
+
+      /* Hide the circle on hover */
+      .s6-section:hover::before {
+        opacity: 0;
+      }
+
+      /* Ensure inner content is on top of the circle */
+      .s6-default-content,
+      .s6-hover-content {
+        position: relative;
+        z-index: 1;
+        transition: opacity 0.5s ease;
+      }
+
+      .s6-section:hover {
+        border: 1px solid rgba(8, 110, 141, 0.85);
+      }
+
+      /* Hover content is absolutely positioned on top */
+      .s6-hover-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(8, 110, 141, 0.85);
+        opacity: 0;
+      }
+
+      /* On hover, fade out the default content */
+      .s6-section:hover .s6-default-content {
+        opacity: 0;
+      }
+
+      /* On hover, fade in the hover content */
+      .s6-section:hover .s6-hover-content {
+        border: none;
+        outline: none;
+        opacity: 1;
+      }
+
+      /* Icon styling */
+      .s6-icon {
+        font-size: 3em;
+      }
+
+      /* Description styling */
+      .s6-description {
+        margin-top: 10px;
+        font-size: 1em;
+      }
+
+      /* Button styling */
+      .s6-enter-button {
+        padding: 10px 20px;
+        font-size: 1em;
+        border: 1px solid white;
+        background-color: #278794;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: all 0.5s;
+      }
+      .s6-enter-button:hover {
+        background-color: #ffffff;
+        color: #007bff;
+      }
+
+      .s6 {
+        font-size: 50px;
+      }
+
+      .s6-title h1 {
+        font-size: 50px;
+        margin: 20px 0;
+        color: rgb(14, 99, 155);
+      }
+
+      .s6-title h2 {
+        font-size: 20px;
+        margin: 20px 0;
+        color: rgb(14, 99, 155);
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="s6-container">
+      <!-- Title -->
+      <div class="s6-title">
+        <h1>Title 1</h1>
+        <h2>desciption sadasdasdasda</h2>
+      </div>
+
+      <!-- Row with 4 sections -->
+      <div class="s6-row">
+        <!-- Section 1 -->
+        <div class="s6-section">
+          <div class="s6-default-content">
+            <i class="fa-regular fa-folder-open s6"></i>
+            <div class="s6-description">Short description 1</div>
+          </div>
+          <div class="s6-hover-content">
+            <p>dsadsasasd</p>
+            <button class="s6-enter-button">Enter</button>
+          </div>
+        </div>
+        <!-- Section 2 -->
+        <div class="s6-section">
+          <div class="s6-default-content">
+            <i class="fa-regular fa-folder-open s6"></i>
+            <div class="s6-description">Short description 2</div>
+          </div>
+          <div class="s6-hover-content">
+            <p>dsadsasasd</p>
+            <button class="s6-enter-button">Enter</button>
+          </div>
+        </div>
+        <!-- Section 3 -->
+        <div class="s6-section">
+          <div class="s6-default-content">
+            <i class="fa-regular fa-folder-open s6"></i>
+            <div class="s6-description">Short description 3</div>
+          </div>
+          <div class="s6-hover-content">
+            <p>dsadsasasd</p>
+            <button class="s6-enter-button">Enter</button>
+          </div>
+        </div>
+        <!-- Section 4 -->
+        <div class="s6-section">
+          <div class="s6-default-content">
+            <i class="fa-regular fa-folder-open s6"></i>
+            <div class="s6-description">Short description 4</div>
+          </div>
+          <div class="s6-hover-content">
+            <p>dsadsasasd</p>
+            <button class="s6-enter-button">Enter</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

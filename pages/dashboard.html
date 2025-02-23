@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        align-items: stretch;
+        height: 100vh;
+        width: 100vw;
+      }
+      /* Left container (Navbar) styling */
+      .container-left {
+        flex: 1;
+        background: #ffffff;
+        padding: 40px 20px;
+      }
+      .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .navbar li {
+        background: #000;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+      .navbar a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        border-radius: 10px;
+        transition: background 0.3s;
+      }
+      .navbar a:hover {
+        background: #4df3ff;
+      }
+      /* Right container styling */
+      .container-right {
+        flex: 4;
+        background: linear-gradient(135deg, #ffffff, #007c92);
+        padding: 20px;
+        overflow-y: auto;
+      }
+      .dashboard {
+        display: none;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        background: #fff;
+      }
+      .dashboard.active {
+        display: block;
+      }
+      .dashboard h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+      .dashboard-section {
+        border-radius: 15px;
+        background: #ffffff;
+        padding: 15px;
+        margin-bottom: 20px;
+        color: black;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-left: 5px solid #006105;
+        transition: background 0.5s;
+        cursor: pointer;
+      }
+      .dashboard-section:hover {
+        background: #87deee;
+        color: white;
+      }
+      .dashboard-section .section-icon {
+        font-size: 30px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .dashboard-section .section-title {
+        text-decoration: underline;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: rgb(87, 87, 87);
+        transition: all 0.5s;
+        font-weight: bold;
+      }
+      .dashboard-section .section-content {
+        font-size: 20px;
+        color: #555;
+      }
+      .dashboard-section ul {
+        list-style-type: disc;
+        margin-left: 20px;
+      }
+      /* Specific border styles for each dashboard type */
+      #adminDashboard {
+        border-left: 5px solid #d9534f;
+      }
+      #patientDashboard {
+        border-left: 5px solid #5bc0de;
+      }
+      #doctorDashboard {
+        border-left: 5px solid #5cb85c;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="topbar-sub"></div>
+    <div class="container">
+      <!-- Left Navbar -->
+      <div class="container-left">
+        <nav class="navbar">
+          <ul id="navbarList">
+            <!-- Navigation items will be dynamically inserted here -->
+          </ul>
+        </nav>
+      </div>
+      <!-- Right Content -->
+      <div class="container-right">
+        <!-- Admin Dashboard -->
+        <div id="adminDashboard" class="dashboard">
+          <h1>Admin Dashboard</h1>
+          <div class="dashboard-section">
+            <div class="section-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="section-title">User Management</div>
+            <div class="section-content">
+              <ul>
+                <li>
+                  View comprehensive lists of patients, doctors, and other
+                  admins.
+                </li>
+                <li>Edit user details and update roles or permissions.</li>
+                <li>Delete or suspend user accounts as needed.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dashboard-section">
+            <div class="section-icon">
+              <i class="fa-solid fa-calendar-alt"></i>
+            </div>
+            <div class="section-title">Schedule &amp; System Management</div>
+            <div class="section-content">
+              <ul>
+                <li>
+                  Update and manage doctors' working hours and availability.
+                </li>
+                <li>Approve or adjust appointment schedules.</li>
+                <li>Configure system settings and manage access levels.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dashboard-section">
+            <div class="section-icon">
+              <i class="fa-solid fa-user-plus"></i>
+            </div>
+            <div class="section-title">Registration &amp; Administration</div>
+            <div class="section-content">
+              <ul>
+                <li>Create new admin accounts or add new doctor profiles.</li>
+                <li>
+                  Manage registration requests and validate required
+                  information.
+                </li>
+                <li>Set up policies for secure account creation.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dashboard-section">
+            <div class="section-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div class="section-title">Reports &amp; Analytics</div>
+            <div class="section-content">
+              <ul>
+                <li>View appointment statistics and user activity logs.</li>
+                <li>
+                  Generate financial reports and system performance analytics.
+                </li>
+                <li>Monitor usage trends and generate custom reports.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Patient Dashboard -->
+        <div id="patientDashboard" class="dashboard">
+          <h1>Patient Dashboard</h1>
+          <div class="dashboard-section">
+            <div class="section-icon">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <div class="section-title">Upcoming Appointments</div>
+            <div class="section-content">
+              <ul>
+                <li>
+                  See a list of all your future appointments including date,
+                  time, and location.
+                </li>
+                <li>
+                  Click an appointment to view details or cancel if needed.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dashboard-section">
+            <div class="section-icon"><i class="fa-solid fa-comments"></i></div>
+            <div class="section-title">Chatbox &amp; Communication</div>
+            <div class="section-content">
+              <ul>
+                <li>
+                  Access your chat history with doctors for quick reference.
+                </li>
+                <li>
+                  Initiate a chat with an AI assistant for preliminary advice.
+                </li>
+                <li>
+                  Start a live chat with available doctors during working hours.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dashboard-section">
+            <div class="section-icon"><i class="fa-solid fa-user"></i></div>
+            <div class="section-title">
+              Personal Profile &amp; Medical Information
+            </div>
+            <div class="section-content">
+              <ul>
+                <li>
+                  Review and update your personal details including contact info
+                  and address.
+                </li>
+                <li>
+                  Check your current medications and diagnostics information.
+                </li>
+                <li>
+                  View general health statistics such as weight, height, and
+                  more.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dashboard-section">
+            <div class="section-icon"><i class="fa-solid fa-search"></i></div>
+            <div class="section-title">Make an Appointment</div>
+            <div class="section-content">
+              <ul>
+                <li>
+                  Filter by medical expertise (e.g., cardiology, neurology,
+                  etc.).
+                </li>
+                <li>
+                  Search for the closest available specialist based on your
+                  address.
+                </li>
+                <li>
+                  Click on a specialist to view detailed information before
+                  booking.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doctor Dashboard -->
+        <div id="doctorDashboard" class="dashboard">
+          <h1>Doctor Dashboard</h1>
+          <div class="dashboard-section">
+            <div class="section-icon">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <div class="section-title">Your Appointments</div>
+            <div class="section-content">
+              <ul>
+                <li>View a detailed list of your upcoming appointments.</li>
+                <li>
+                  See appointment specifics: patient name, time, location, and
+                  expertise.
+                </li>
+                <li>
+                  Update or cancel appointments directly from your dashboard.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dashboard-section">
+            <div class="section-icon"><i class="fa-solid fa-search"></i></div>
+            <div class="section-title">Search Patient information</div>
+            <div class="section-content">
+              <ul>
+                <li>Search for patients using their ID or name.</li>
+                <li>
+                  Access detailed patient cards including contact info, age, and
+                  current diagnosis.
+                </li>
+                <li>Review past appointment history and medication records.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dashboard-section">
+            <div class="section-icon">
+              <i class="fa-solid fa-notes-medical"></i>
+            </div>
+            <div class="section-title">Update Patient Records</div>
+            <div class="section-content">
+              <ul>
+                <li>Add new medications or update existing treatment plans.</li>
+                <li>Record new diagnoses and treatment adjustments.</li>
+                <li>
+                  Maintain an up-to-date medical history for each patient.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dashboard-section">
+            <div class="section-icon"><i class="fa-solid fa-comments"></i></div>
+            <div class="section-title">Communication &amp; Messaging</div>
+            <div class="section-content">
+              <ul>
+                <li>
+                  View messages from patients and respond directly through the
+                  chat system.
+                </li>
+                <li>Receive appointment alerts and updates.</li>
+                <li>
+                  Integrate with AI tools to streamline routine communications.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // "admin"  "patient" "doctor"
+      var userRole = "doctor";
+
+      // Hide all dashboards initially
+      var dashboards = document.querySelectorAll(".dashboard");
+      dashboards.forEach((dashboard) => dashboard.classList.remove("active"));
+
+      var activeDashboard;
+      if (userRole === "admin") {
+        activeDashboard = document.getElementById("adminDashboard");
+      } else if (userRole === "patient") {
+        activeDashboard = document.getElementById("patientDashboard");
+      } else if (userRole === "doctor") {
+        activeDashboard = document.getElementById("doctorDashboard");
+      }
+
+      if (activeDashboard) {
+        activeDashboard.classList.add("active");
+
+        // Populate the sidebar dynamically
+        var navList = document.getElementById("navbarList");
+        var sections = activeDashboard.querySelectorAll(".dashboard-section");
+
+        sections.forEach((section, index) => {
+          var titleElement = section.querySelector(".section-title");
+          var iconElement = section.querySelector(".section-icon i"); // Get the icon class
+          if (titleElement && iconElement) {
+            var titleText = titleElement.textContent;
+            var sectionId = "section" + index;
+            section.setAttribute("id", sectionId);
+            section.style.display = index === 0 ? "block" : "none"; // Show only the first section initially
+
+            // Create sidebar navigation item with icon
+            var li = document.createElement("li");
+            var a = document.createElement("a");
+            a.href = "#";
+            a.textContent = titleText;
+            a.setAttribute("data-section", sectionId);
+            a.addEventListener("click", function (event) {
+              event.preventDefault();
+              showSection(sectionId);
+            });
+
+            // Add the icon to the sidebar item
+            var iconClone = iconElement.cloneNode(true);
+            iconClone.style.marginRight = "10px"; // Add spacing between icon and text
+            a.prepend(iconClone);
+
+            li.appendChild(a);
+            navList.appendChild(li);
+          }
+        });
+      }
+
+      // Function to show only the selected section
+      function showSection(sectionId) {
+        var allSections = document.querySelectorAll(".dashboard-section");
+        allSections.forEach((section) => (section.style.display = "none"));
+
+        var selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+          selectedSection.style.display = "block";
+        }
+      }
+
+      // -------- Import Components (e.g., topbar) --------
+      function load_components() {
+        let arr_components = ["topbar-sub"];
+        for (let i = 0; i < arr_components.length; i++) {
+          let path = "../components/" + arr_components[i] + ".html";
+          import_html(path, arr_components[i]);
+        }
+      }
+
+      function import_html(path, name) {
+        fetch(path)
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById(name).innerHTML = html;
+          });
+      }
+
+      load_components();
+    </script>
+  </body>
+</html>

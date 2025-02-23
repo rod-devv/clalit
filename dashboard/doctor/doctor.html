@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Doctor Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../dash.css" />
+  </head>
+  <body>
+    <!-- Optional topbar -->
+    <div id="topbar-sub"></div>
+
+    <div class="container">
+      <!-- Left Navbar -->
+      <div class="container-left">
+        <nav class="navbar">
+          <ul id="navbarList">
+            <!-- You can hardcode or dynamically generate navigation items -->
+            <li>
+              <a href="#">
+                <i
+                  class="fa-solid fa-calendar-check"
+                  style="margin-right: 10px"
+                ></i>
+                Your Appointments
+              </a>
+            </li>
+            <!-- Additional doctor navigation items -->
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Right Content -->
+      <div class="container-right">
+        <div id="doctorDashboard" class="dashboard active">
+          <h1>Doctor Dashboard</h1>
+          <div class="dashboard-section">
+            <div class="section-icon">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <div class="section-title">Your Appointments</div>
+            <div class="section-content">
+              <ul>
+                <li>View a detailed list of your upcoming appointments.</li>
+                <li>
+                  See appointment specifics: patient name, time, location, and
+                  expertise.
+                </li>
+                <li>
+                  Update or cancel appointments directly from your dashboard.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Additional doctor sections here... -->
+        </div>
+      </div>
+    </div>
+
+    <script src="dash.js"></script>
+  </body>
+</html>

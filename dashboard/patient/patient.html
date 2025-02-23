@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Patient Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../dash.css" />
+  </head>
+  <body>
+    <!-- Optional Topbar -->
+    <div id="topbar-sub"></div>
+
+    <div class="container">
+      <!-- Left Sidebar (Navigation) -->
+      <div class="container-left">
+        <nav class="navbar">
+          <ul id="navbarList">
+            <li>
+              <a href="#" data-section="upcomingAppointmentsSection">
+                <i
+                  class="fa-solid fa-calendar-check"
+                  style="margin-right: 10px"
+                ></i>
+                Upcoming Appointments
+              </a>
+            </li>
+            <li>
+              <a href="#" data-section="chatSection">
+                <i class="fa-solid fa-comments" style="margin-right: 10px"></i>
+                Chatbox &amp; Communication
+              </a>
+            </li>
+            <li>
+              <a href="#" data-section="profileSection">
+                <i class="fa-solid fa-user" style="margin-right: 10px"></i>
+                Personal Profile &amp; Medical Information
+              </a>
+            </li>
+            <li>
+              <a href="#" data-section="appointmentSection">
+                <i class="fa-solid fa-search" style="margin-right: 10px"></i>
+                Make an Appointment
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Right Content Area -->
+      <div class="container-right">
+        <div id="patientDashboard" class="dashboard active">
+          <h1>Patient Dashboard</h1>
+
+          <!-- Upcoming Appointments Section -->
+          <div id="upcomingAppointmentsSection" class="content-section">
+            <div class="dashboard-section">
+              <div class="section-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <div class="section-title">Upcoming Appointments</div>
+              <div class="section-content">
+                <ul>
+                  <li>
+                    See a list of all your future appointments including date,
+                    time, and location.
+                  </li>
+                  <li>
+                    Click an appointment to view details or cancel if needed.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Trigger to toggle appointment details -->
+            <div
+              class="dashboard-section show-appointments-trigger"
+              id="showAppointmentsTrigger"
+            >
+              <h2>Show Appointments</h2>
+            </div>
+          </div>
+
+          <!-- Chatbox & Communication Section -->
+          <div id="chatSection" class="content-section" style="display: none">
+            <!-- Existing Chatbox Content -->
+            <div class="dashboard-section">
+              <div class="section-icon">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+              <div class="section-title">Chatbox & Communication</div>
+              <div class="section-content">
+                <ul>
+                  <li>
+                    Access your chat history with doctors for quick reference.
+                  </li>
+                  <li>
+                    Initiate a chat with an AI assistant for preliminary advice.
+                  </li>
+                  <li>
+                    Start a live chat with available doctors during working
+                    hours.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- New Sub-Section: Start Chatting with AI Bot -->
+            <div
+              id="aiChatSection"
+              class="dashboard-section"
+              onclick="window.location.href='../../pages/ai_consultation.html';"
+            >
+              <div
+                class="section-header"
+                style="display: flex; align-items: center"
+              >
+                <div
+                  class="section-icon"
+                  style="font-size: 2em; margin-right: 10px"
+                >
+                  <i class="fa-solid fa-comment-nodes"></i>
+                </div>
+                <div class="section-title" style="font-size: 1.8em">
+                  <h1>Start Chatting With AI Bot Now!</h1>
+                </div>
+              </div>
+              <div class="section-content">
+                <ul style="list-style: none; padding-left: 0">
+                  <li>
+                    <i
+                      class="fa-solid fa-check check-icon"
+                      style="color: rgb(255, 255, 255); margin-right: 5px"
+                    ></i>
+                    <strong>Medical Consultation:</strong> Get expert advice on
+                    your health concerns instantly.
+                  </li>
+                  <li>
+                    <i
+                      class="fa-solid fa-check check-icon"
+                      style="color: rgb(255, 255, 255); margin-right: 5px"
+                    ></i>
+                    <strong>Cutting-Edge Technology:</strong> Our AI leverages
+                    the latest advancements in medical technology.
+                  </li>
+                  <li>
+                    <i
+                      class="fa-solid fa-check check-icon"
+                      style="color: rgb(255, 255, 255); margin-right: 5px"
+                    ></i>
+                    <strong>Medication Management:</strong> Organize your
+                    prescriptions and dosage schedules effortlessly.
+                  </li>
+                  <li>
+                    <i
+                      class="fa-solid fa-check check-icon"
+                      style="color: rgb(255, 255, 255); margin-right: 5px"
+                    ></i>
+                    <strong>Health Records:</strong> Securely access and update
+                    your medical history and test results.
+                  </li>
+                  <li>
+                    <i
+                      class="fa-solid fa-check check-icon"
+                      style="color: rgb(255, 255, 255); margin-right: 5px"
+                    ></i>
+                    <strong>Secure Communication:</strong> Enjoy private,
+                    encrypted conversations exclusively with your AI bot.
+                  </li>
+                  <li>
+                    <i
+                      class="fa-solid fa-check check-icon"
+                      style="color: rgb(255, 255, 255); margin-right: 5px"
+                    ></i>
+                    <strong>Health Insights:</strong> Receive personalized tips
+                    and trends to enhance your well-being.
+                  </li>
+                  <li>
+                    <i
+                      class="fa-solid fa-check check-icon"
+                      style="color: rgb(255, 255, 255); margin-right: 5px"
+                    ></i>
+                    <strong>Emergency Support:</strong> 24/7 immediate
+                    assistance during critical moments.
+                  </li>
+                  <li>
+                    <i
+                      class="fa-solid fa-check check-icon"
+                      style="color: rgb(255, 255, 255); margin-right: 5px"
+                    ></i>
+                    <strong>Expert Medical Knowledge:</strong> Powered by AI
+                    trained on extensive medical expertise.
+                  </li>
+                  <li>
+                    <i
+                      class="fa-solid fa-check check-icon"
+                      style="color: rgb(255, 255, 255); margin-right: 5px"
+                    ></i>
+                    <strong>Instant Replies:</strong> Get prompt responses
+                    without waiting for hours or days.
+                  </li>
+                  <li>
+                    <i
+                      class="fa-solid fa-check check-icon"
+                      style="color: rgb(255, 255, 255); margin-right: 5px"
+                    ></i>
+                    <strong>Trusted by Top Institutions:</strong> Utilized by
+                    some of the largest medical institutions in Israel.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Personal Profile & Medical Information Section -->
+          <!-- <div
+            id="profileSection"
+            class="content-section"
+            style="display: none"
+          >
+            <div class="dashboard-section">
+              <div class="section-icon">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="section-title">
+                Personal Profile &amp; Medical Information
+              </div>
+              <div class="section-content">
+                <ul>
+                  <li>
+                    Review and update your personal details including contact
+                    info and address.
+                  </li>
+                  <li>
+                    Check your current medications and diagnostics information.
+                  </li>
+                  <li>
+                    View general health statistics such as weight, height, and
+                    more.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Personal Profile & Medical Information Section -->
+          <!-- Personal Profile & Medical Information Section -->
+          <!-- Personal Profile & Medical Information Section -->
+          <div
+            id="profileSection"
+            class="content-section"
+            style="display: none"
+          >
+            <div class="dashboard-section">
+              <div class="section-icon">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="section-title">
+                Personal Profile &amp; Medical Information
+              </div>
+              <div class="section-content">
+                <ul>
+                  <li>
+                    Review and update your personal details including contact
+                    info and address.
+                  </li>
+                  <li>
+                    Check your current medications and diagnostics information.
+                  </li>
+                  <li>
+                    View general health statistics such as weight, height, and
+                    more.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Profile Details Sub-Section (no hover) -->
+            <div id="profileDetails" class="dashboard-section no-hover">
+              <div
+                class="section-header"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <div class="section-title">Profile Details</div>
+                <div>
+                  <button class="edit-button" onclick="editProfileDetails()">
+                    Edit
+                  </button>
+                  <button class="save-button" onclick="saveProfileDetails()">
+                    Save
+                  </button>
+                </div>
+              </div>
+              <div class="section-content">
+                <p>
+                  <strong>Name:</strong> <span id="profileName">John Doe</span>
+                </p>
+                <p>
+                  <strong>Email:</strong>
+                  <span id="profileEmail">john.doe@example.com</span>
+                </p>
+                <p>
+                  <strong>Phone:</strong>
+                  <span id="profilePhone">(555) 123-4567</span>
+                </p>
+                <p>
+                  <strong>Address:</strong>
+                  <span id="profileAddress">123 Main St, City, Country</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Medical Information Sub-Section (no hover) -->
+            <div id="medicalInfo" class="dashboard-section no-hover">
+              <div
+                class="section-header"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <div class="section-title">Medical Information</div>
+                <div>
+                  <button class="edit-button" onclick="editMedicalInfo()">
+                    Edit
+                  </button>
+                  <button class="save-button" onclick="saveMedicalInfo()">
+                    Save
+                  </button>
+                </div>
+              </div>
+              <div class="section-content">
+                <p>
+                  <strong>Medications:</strong>
+                  <span id="medications">Aspirin, Ibuprofen</span>
+                </p>
+                <p>
+                  <strong>Allergies:</strong> <span id="allergies">None</span>
+                </p>
+                <p>
+                  <strong>Last Checkup:</strong>
+                  <span id="lastCheckup">2025-03-15</span>
+                </p>
+                <p><strong>Height:</strong> <span id="height">5'10"</span></p>
+                <p><strong>Weight:</strong> <span id="weight">160 lbs</span></p>
+              </div>
+            </div>
+
+            <!-- New Empty Section for Future Content -->
+            <div id="futureSection" class="dashboard-section">
+              <div class="section-title">Additional Information</div>
+              <div class="section-content">
+                <!-- Empty for now; content will be added later -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Make an Appointment Section -->
+          <!-- Make an Appointment Section -->
+          <div
+            id="appointmentSection"
+            class="content-section"
+            style="display: none"
+          >
+            <div class="dashboard-section">
+              <div class="section-icon">
+                <i class="fa-solid fa-search"></i>
+              </div>
+              <div class="section-title">Make an Appointment</div>
+              <div class="section-content">
+                <ul>
+                  <li>
+                    Filter by medical expertise (e.g., cardiology, neurology,
+                    etc.).
+                  </li>
+                  <li>
+                    Search for the closest available specialist based on your
+                    address.
+                  </li>
+                  <li>
+                    Click on a specialist to view detailed information before
+                    booking.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Combined Filter & Search Sub-Section -->
+            <div id="filterSearchSection" class="dashboard-section">
+              <div class="section-title">Filter &amp; Search Specialists</div>
+              <div class="section-content">
+                <select id="expertiseSelect">
+                  <option value="">Select an expertise</option>
+                  <option value="cardiology">Cardiology</option>
+                  <option value="neurology">Neurology</option>
+                  <option value="dermatology">Dermatology</option>
+                  <option value="pediatrics">Pediatrics</option>
+                </select>
+                <input
+                  type="text"
+                  id="addressInput"
+                  placeholder="Enter your address"
+                />
+                <button onclick="applyFilters()">Apply</button>
+              </div>
+            </div>
+
+            <!-- Sub-Section: Specialist List -->
+            <div id="specialistList" class="dashboard-section">
+              <div class="section-title">Available Specialists</div>
+              <div class="section-content">
+                <div id="specialistsContainer">
+                  <!-- Specialist list will be populated here -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Sub-Section: Specialist Details (hidden by default) -->
+            <div
+              id="specialistDetails"
+              class="dashboard-section"
+              style="display: none"
+            >
+              <div class="section-title">Specialist Details</div>
+              <div class="section-content" id="specialistDetailsContent">
+                <!-- Detailed information will appear here -->
+              </div>
+              <button onclick="closeSpecialistDetails()">Close Details</button>
+            </div>
+          </div>
+
+          <!-- (Dynamic appointment details will be inserted below the Show Appointments trigger) -->
+        </div>
+      </div>
+    </div>
+
+    <script src="patient.js"></script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>main-page section 4</title>
+    <style>
+      /* Full-width container */
+      .s4-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 50px 0;
+        text-align: center;
+        font-family: sans-serif;
+        background: linear-gradient(
+            rgba(6, 108, 148, 0.8),
+            rgba(8, 110, 141, 0.8)
+          ),
+          url("../public/imgs/img-s4.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      /* Title styling */
+      .s4-title {
+        font-size: 2em;
+        margin: 20px 0;
+        color: white;
+      }
+      /* Row layout for three sections */
+      .s4-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      /* Each section */
+      .s4-section {
+        width: 300px;
+        height: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        box-sizing: border-box;
+        margin: 20px 10px;
+        padding: 90px;
+        transition: all 0.5s;
+      }
+      .s4-section:hover {
+        border: 1px solid rgba(8, 110, 141, 0.85);
+      }
+      /* Default content (icon and description) */
+      .s4-default-content,
+      /* Hover content (button) */
+      .s4-hover-content {
+        transition: opacity 0.5s ease;
+      }
+      /* Hover content is absolutely positioned on top */
+      .s4-hover-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(8, 110, 141, 0.85);
+        opacity: 0;
+      }
+      /* On hover, fade out the default content */
+      .s4-section:hover .s4-default-content {
+        opacity: 0;
+      }
+      /* On hover, fade in the hover content */
+      .s4-section:hover .s4-hover-content {
+        border: none;
+        outline: none;
+        opacity: 1;
+      }
+      /* Icon styling (using placeholder text; replace with actual images or icon fonts as needed) */
+      .s4-icon {
+        font-size: 3em;
+      }
+      /* Description styling */
+      .s4-description {
+        margin-top: 10px;
+        font-size: 1em;
+      }
+      /* Button styling */
+      .s4-enter-button {
+        padding: 10px 20px;
+        font-size: 1em;
+        border: 1px solid white;
+        background-color: #278794;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: all 0.5s;
+      }
+      .s4-enter-button:hover {
+        background-color: #ffffff;
+        color: #007bff;
+      }
+
+      .s4 {
+        font-size: 50px;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="s4-container">
+      <!-- Title -->
+      <div class="s4-title">Title</div>
+      <!-- Row with 3 sections -->
+      <div class="s4-row">
+        <!-- Section 1 -->
+        <div class="s4-section">
+          <div class="s4-default-content">
+            <i class="fa-regular fa-folder-open s4"></i>
+            <div class="s4-description">Short description 1</div>
+          </div>
+          <div class="s4-hover-content">
+            <button class="s4-enter-button">Enter</button>
+          </div>
+        </div>
+        <!-- Section 2 -->
+        <div class="s4-section">
+          <div class="s4-default-content">
+            <i class="fa-regular fa-folder-open s4"></i>
+            <div class="s4-description">Short description 2</div>
+          </div>
+          <div class="s4-hover-content">
+            <button class="s4-enter-button">Enter</button>
+          </div>
+        </div>
+        <!-- Section 3 -->
+        <div class="s4-section">
+          <div class="s4-default-content">
+            <i class="fa-regular fa-folder-open s4"></i>
+            <div class="s4-description">Short description 3</div>
+          </div>
+          <div class="s4-hover-content">
+            <button class="s4-enter-button">Enter</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

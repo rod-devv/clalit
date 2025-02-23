@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>topbar component</title>
+  </head>
+
+  <link rel="stylesheet" href="../style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+  <style>
+    .rounded {
+      border-radius: 20px;
+
+      padding: 8px 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .sidebar-icon {
+      margin-right: 30px;
+      font-size: 40px;
+      color: #2d94bd;
+    }
+
+    .logo {
+      margin-right: 140px;
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+
+      background: #ffffff;
+
+      width: 100vw;
+      z-index: 1000;
+      height: 100px;
+
+      box-shadow: 0 8px 16px -6px rgba(0, 0, 0, 0.2);
+    }
+
+    .topbar-left {
+      flex: 3;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+    }
+
+    .topside-btn {
+      color: black;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+      background: none;
+    }
+
+    .topbar-center {
+      flex: 6;
+      background: #ffffff;
+      display: flex;
+      align-items: end;
+      justify-content: end;
+    }
+
+    #profile-tab {
+      margin-right: 60px;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      background: #f6fbfc;
+      border-bottom: 5px solid #00667d;
+      height: 70%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      padding: 0px 15px;
+    }
+
+    .btn1 {
+      background: #3a73b4 !important;
+      color: rgb(255, 255, 255);
+      transition: background 0.3s;
+      font-weight: bold;
+      padding: 10px 25px !important;
+    }
+
+    .btn1:hover {
+      background: #0953a7 !important;
+      color: white;
+    }
+
+    .btn2 {
+      background: #058625 !important;
+      color: white;
+      transition: background 0.3s;
+      font-weight: bold;
+      /* margin: 0 10px; */
+      /* padding: 10px; */
+    }
+    #contact {
+      margin: 0 10px;
+      padding: 10px 25px;
+    }
+
+    .btn2:hover {
+      background: #045a19 !important;
+      color: white;
+    }
+
+    .topbar-right {
+      flex: 4;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    #line-col {
+      border-right: 1px solid rgb(230, 230, 230);
+
+      height: 100px;
+
+      margin-right: 2px;
+      margin-left: 2px;
+    }
+
+    #line-col-small {
+      border-right: 1px solid rgb(228, 228, 228);
+      height: 30px;
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+
+    #title-time {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      color: #123985;
+    }
+
+    .dropdown-toggle .arrow {
+      margin-left: 5px;
+      transition: transform 0.3s ease;
+      font-size: 14px;
+    }
+
+    .dropdown-toggle.active .arrow {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      right: 30;
+      top: 100%;
+      margin-top: 8px; /* space between button and menu */
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .dropdown-menu.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu a {
+      color: black;
+      padding: 8px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f1f1f1;
+    }
+
+    #exit {
+      font-size: 20px;
+      margin: 0px 15px;
+      font-weight: bold;
+      color: #123985;
+    }
+
+    .icon-exit {
+      font-size: 25px;
+      color: #123985;
+      font-weight: bold;
+    }
+
+    #my-profie-title {
+      font-size: 20px;
+      color: #123985;
+      font-weight: bold;
+    }
+
+    #profie-tab-title {
+      font-size: 20px;
+      color: #123985;
+    }
+
+    #title-date {
+      font-size: 15px;
+      color: #123985;
+    }
+
+    .part2 {
+      margin: 0px 25px;
+    }
+  </style>
+
+  <body>
+    <div class="topbar">
+      <div class="topbar-left">
+        <p id="exit">exit</p>
+        <i class="fa-solid fa-arrow-right-to-bracket icon-exit"></i>
+
+        <div id="line-col-small"></div>
+
+        <div class="dropdown">
+          <button class="dropdown-toggle" onclick="toggleDropdown(event)">
+            <i class="fas fa-globe globe-icon"></i>
+            <span class="arrow">&#x25BC;</span>
+            <!-- Down arrow -->
+          </button>
+          <div id="dropdownMenu" class="dropdown-menu">
+            <a href="#">العربية</a>
+            <a href="#">Русский</a>
+            <a href="#">English</a>
+            <a href="#">עברית</a>
+          </div>
+        </div>
+
+        <div id="line-col-small"></div>
+
+        <p id="my-profie-title">My profile</p>
+      </div>
+      <div class="topbar-center">
+        <div id="profile-tab">
+          <h1 id="profie-tab-title">koko asdas</h1>
+        </div>
+      </div>
+
+      <div id="line-col"></div>
+
+      <div class="topbar-right">
+        <div class="part1">
+          <h1 id="title-time">Good evenning</h1>
+          <p id="title-date">28.07.2024 | 15:02</p>
+        </div>
+
+        <div class="part2">
+          <img src="../public/imgs/logo_1.png" alt="Logo" class="logo_2" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleDropdown(event) {
+        // Toggle the dropdown menu visibility
+        document.getElementById("dropdownMenu").classList.toggle("show");
+        // Toggle arrow rotation on the button
+        event.currentTarget.classList.toggle("active");
+      }
+
+      // Close dropdown if user clicks outside of it
+      window.onclick = function (event) {
+        if (!event.target.closest(".dropdown")) {
+          var dropdownMenu = document.getElementById("dropdownMenu");
+          var dropdownToggle = document.querySelector(".dropdown-toggle");
+          if (dropdownMenu.classList.contains("show")) {
+            dropdownMenu.classList.remove("show");
+            dropdownToggle.classList.remove("active");
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

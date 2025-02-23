@@ -1,0 +1,214 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+  width: 100vw;
+}
+/* Left container (Navbar) styling */
+.container-left {
+  flex: 1;
+  background: #ffffff;
+  padding: 40px 20px;
+}
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.navbar li {
+  background: #000;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+.navbar a:hover {
+  background: #4df3ff;
+}
+/* Right container styling */
+.container-right {
+  flex: 4;
+  background: linear-gradient(135deg, #ffffff, #007c92);
+  padding: 20px;
+  overflow-y: auto;
+}
+.dashboard {
+  display: none;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  background: #fff;
+}
+.dashboard.active {
+  display: block;
+}
+.dashboard h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.dashboard-section {
+  border-radius: 15px;
+  background: #ffffff;
+  padding: 15px;
+  margin-bottom: 20px;
+  color: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #006105;
+  transition: background 0.5s;
+  cursor: pointer;
+}
+.dashboard-section:hover {
+  background: #87deee;
+  color: white;
+}
+.dashboard-section .section-icon {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.dashboard-section .section-title {
+  text-decoration: underline;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: rgb(87, 87, 87);
+  transition: all 0.5s;
+  font-weight: bold;
+}
+.dashboard-section .section-content {
+  font-size: 20px;
+  color: #555;
+}
+.dashboard-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+/* Dropdown for appointments list */
+.dropdown-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+}
+.dropdown-content.open {
+  max-height: 1000px; /* Arbitrary high value to allow full expansion */
+}
+/* Appointment item styling */
+.appointment-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+.appointment-header {
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.appointment-details {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+  margin-top: 5px;
+}
+.appointment-details.open {
+  max-height: 200px;
+}
+.appointment-details p {
+  margin: 5px 0;
+}
+.appointment-details button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: none;
+  background: #d9534f;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* Specific border styles for each dashboard type */
+#adminDashboard {
+  border-left: 5px solid #d9534f;
+}
+#patientDashboard {
+  border-left: 5px solid #5bc0de;
+}
+#doctorDashboard {
+  border-left: 5px solid #5cb85c;
+}
+
+.appointments-section {
+  margin-top: 20px;
+  background: #fff;
+  padding: 15px;
+  border-left: 5px solid #5bc0de; /* or any other color to differentiate */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-section.no-hover:hover {
+  background: none;
+  color: inherit;
+  /* Remove any other hover styles you may have applied */
+}
+
+.save-button,
+.edit-button {
+  background: #47a064;
+  padding: 10px;
+  margin: 5px;
+  font-size: 20px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  transition: all 0.3s;
+}
+
+.save-button:hover,
+.edit-button:hover {
+  background: #3e94a0;
+}
+
+.check-icon {
+  background-color: green; /* Green background */
+  border-radius: 50%; /* Fully rounded (circle) */
+  color: white; /* White icon color */
+  display: inline-flex; /* Inline-flex for proper alignment */
+  align-items: center;
+  justify-content: center;
+  width: 20px; /* Fixed width */
+  height: 20px; /* Fixed height */
+  margin-right: 5px; /* Space between icon and text */
+  font-size: 12px; /* Adjust icon size as needed */
+}
+
+#aiChatSection {
+  /* background: #000; */
+}
+
+#aiChatSection:hover {
+  background: #31c996;
+}
+
+#appointmentsSection {
+  background: #ffffff;
+}
+
+#appointmentsSection:hover {
+  background: #ffffff;
+  color: black;
+}

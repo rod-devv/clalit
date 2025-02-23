@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>main-page section 6</title>
+    <style>
+      /* Full-width container */
+      .s7-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 50px 0;
+        text-align: center;
+        font-family: sans-serif;
+        background: #f17a17;
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Row layout for sections */
+      .s7-row,
+      .s7-row-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      /* Each section */
+      .s7-section {
+        color: rgb(0, 0, 0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 191px;
+        height: 190px;
+        margin: 1px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        box-sizing: border-box;
+        transition: all 0.5s;
+        background: #fff;
+      }
+
+      /* Each section */
+      .s7-section-2 {
+        color: rgb(0, 0, 0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 239.25px;
+        height: 190px;
+        margin: 1px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        box-sizing: border-box;
+        transition: all 0.5s;
+        background: #fff;
+      }
+
+      /* Ensure inner content is on top of the circle */
+      .s7-default-content,
+      .s7-hover-content {
+        position: relative;
+        z-index: 1;
+        transition: opacity 1s ease;
+      }
+
+      .s7-section:hover,
+      .s7-section-2:hover {
+        border: 1px solid rgba(255, 72, 0, 0.85);
+      }
+
+      /* Hover content is absolutely positioned on top */
+      .s7-hover-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(214, 55, 6, 0.85);
+        opacity: 0;
+        color: #fff;
+      }
+
+      /* On hover, fade out the default content */
+      .s7-section:hover .s7-default-content,
+      .s7-section-2:hover .s7-default-content {
+        opacity: 0;
+      }
+
+      /* On hover, fade in the hover content */
+      .s7-section:hover .s7-hover-content,
+      .s7-section-2:hover .s7-hover-content {
+        border: none;
+        outline: none;
+        opacity: 1;
+      }
+
+      /* Icon styling */
+      .s7-icon {
+        font-size: 3em;
+      }
+
+      /* Description styling */
+      .s7-description {
+        margin-top: 10px;
+        font-size: 1em;
+      }
+
+      .s7 {
+        font-size: 50px;
+      }
+
+      .s7-title h1 {
+        font-size: 25px;
+        margin: 20px 0;
+        color: rgb(0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="s7-container">
+      <!-- Title -->
+      <div class="s7-title">
+        <h1>Title 1</h1>
+      </div>
+
+      <!-- Row with 4 sections -->
+      <div class="s7-row">
+        <!-- Section 1 -->
+        <div class="s7-section">
+          <div class="s7-default-content">
+            <i class="fa-regular fa-folder-open s7"></i>
+            <div class="s7-description">Short description 1</div>
+          </div>
+          <div class="s7-hover-content">
+            <p>dsadsasasd</p>
+          </div>
+        </div>
+        <!-- Section 2 -->
+        <div class="s7-section">
+          <div class="s7-default-content">
+            <i class="fa-regular fa-folder-open s7"></i>
+            <div class="s7-description">Short description 2</div>
+          </div>
+          <div class="s7-hover-content">
+            <p>dsadsasasd</p>
+          </div>
+        </div>
+        <!-- Section 3 -->
+        <div class="s7-section">
+          <div class="s7-default-content">
+            <i class="fa-regular fa-folder-open s7"></i>
+            <div class="s7-description">Short description 3</div>
+          </div>
+          <div class="s7-hover-content">
+            <p>dsadsasasd</p>
+          </div>
+        </div>
+        <!-- Section 4 -->
+        <div class="s7-section">
+          <div class="s7-default-content">
+            <i class="fa-regular fa-folder-open s7"></i>
+            <div class="s7-description">Short description 4</div>
+          </div>
+          <div class="s7-hover-content">
+            <p>dsadsasasd</p>
+          </div>
+        </div>
+
+        <div class="s7-section">
+          <div class="s7-default-content">
+            <i class="fa-regular fa-folder-open s7"></i>
+            <div class="s7-description">Short description 4</div>
+          </div>
+          <div class="s7-hover-content">
+            <p>dsadsasasd</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row with 4 sections -->
+      <div class="s7-row-2">
+        <!-- Section 1 -->
+        <div class="s7-section-2">
+          <div class="s7-default-content">
+            <i class="fa-regular fa-folder-open s7"></i>
+            <div class="s7-description">Short description 1</div>
+          </div>
+          <div class="s7-hover-content">
+            <p>dsadsasasd</p>
+          </div>
+        </div>
+
+        <div class="s7-section-2">
+          <div class="s7-default-content">
+            <i class="fa-regular fa-folder-open s7"></i>
+            <div class="s7-description">Short description 1</div>
+          </div>
+          <div class="s7-hover-content">
+            <p>dsadsasasd</p>
+          </div>
+        </div>
+
+        <div class="s7-section-2">
+          <div class="s7-default-content">
+            <i class="fa-regular fa-folder-open s7"></i>
+            <div class="s7-description">Short description 1</div>
+          </div>
+          <div class="s7-hover-content">
+            <p>dsadsasasd</p>
+          </div>
+        </div>
+
+        <div class="s7-section-2">
+          <div class="s7-default-content">
+            <i class="fa-regular fa-folder-open s7"></i>
+            <div class="s7-description">Short description 1</div>
+          </div>
+          <div class="s7-hover-content">
+            <p>dsadsasasd</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

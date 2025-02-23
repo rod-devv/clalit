@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>sidebar component</title>
+    <style>
+      /* body {
+        margin: 0;
+        font-family: sans-serif;
+      } */
+      /* Menu button to open main sidebar */
+      #sb-menu-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1200;
+        padding: 10px 15px;
+        background: #2d94bd;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      /* Base sidebar styles */
+      .sb-sidebar {
+        position: fixed;
+        right: -550px; /* Hidden offscreen initially */
+        top: 70px;
+        width: 250px;
+        height: 100%;
+        background: #2d94bd;
+        transition: right 0.7s;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        z-index: 1000;
+      }
+      /* Main sidebar close button */
+      #sb-close-btn {
+        align-self: flex-end;
+        font-size: 40px;
+        line-height: 1;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      #sb-close-btn:hover {
+        background: #94d0e7;
+        border-radius: 20%;
+        height: 55px;
+        width: 55px;
+      }
+      /* Sidebar title */
+      #sb-title-sidebar {
+        color: white;
+        margin: 10px 0 20px;
+      }
+      /* Option button base styling */
+      .sb-option-btn {
+        background: none;
+        color: white;
+        border: none;
+        padding: 10px;
+        text-align: left;
+        cursor: pointer;
+        font-size: 16px;
+        position: relative;
+        margin-bottom: 10px;
+      }
+      /* For nested options with further sidebar functionality */
+      .sb-option-btn.sb-nested span {
+        display: inline-block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        /* Increased right padding so the underline extends further toward the arrow */
+        padding-right: 40px;
+      }
+      .sb-option-btn.sb-nested::after {
+        content: ">";
+        font-size: 16px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      /* For options without nested functionality, a simple underline */
+      .sb-option-btn:not(.sb-nested) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      /* Nested sidebar styles */
+      .sb-nested-sidebar {
+        right: -550px; /* Hidden offscreen initially */
+        z-index: 1100; /* Overlays the main sidebar */
+      }
+      /* Back button styling in nested sidebars */
+      .sb-back-btn {
+        background: none;
+        color: white;
+        border: none;
+        padding: 10px;
+        text-align: left;
+        cursor: pointer;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Main Sidebar -->
+    <div class="sb-sidebar" id="sb-sidebar">
+      <button class="sb-close-btn" id="sb-close-btn">&times;</button>
+      <h1 id="sb-title-sidebar">Clalit site</h1>
+      <!-- Option 1: Has nested sidebar -->
+      <button class="sb-option-btn sb-nested" data-target="option1">
+        <span>Option 1</span>
+      </button>
+      <!-- Option 2: No nested sidebar -->
+      <button class="sb-option-btn" data-target="option2">Option 2</button>
+      <!-- Option 3: Has nested sidebar -->
+      <button class="sb-option-btn sb-nested" data-target="option3">
+        <span>Option 3</span>
+      </button>
+      <!-- Option 4: No nested sidebar -->
+      <button class="sb-option-btn" data-target="option4">Option 4</button>
+    </div>
+
+    <!-- Nested Sidebar for Option 1 -->
+    <div class="sb-sidebar sb-nested-sidebar" id="option1-sidebar">
+      <button class="sb-back-btn">&larr; Back</button>
+      <h1>Option 1 Details</h1>
+      <p>Content related to Option 1 goes here.</p>
+    </div>
+
+    <!-- Nested Sidebar for Option 3 -->
+    <div class="sb-sidebar sb-nested-sidebar" id="option3-sidebar">
+      <button class="sb-back-btn">&larr; Back</button>
+      <h1>Option 3 Details</h1>
+      <p>Content related to Option 3 goes here.</p>
+    </div>
+  </body>
+</html>

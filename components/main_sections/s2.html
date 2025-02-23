@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>main-page section 2</title>
+  </head>
+
+  <style>
+    .featured-section {
+      padding: 10px;
+      background-color: #ffffff;
+      width: 100%;
+      margin: 50px 0px;
+    }
+
+    /* Main Section Title */
+    .featured-section .section-title {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Row Container for Items */
+    .featured-section .items-row {
+      display: flex;
+      flex: 1;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      /* gap: 20px; */
+    }
+
+    /* Individual Item Styling */
+    .featured-section .item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      text-align: center;
+      flex: 1;
+      /* Adjust these values as needed to control item width */
+      min-width: 150px;
+      max-width: 200px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Small Title for each Item */
+    .featured-section .item-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+
+    /* Picture inside each Item */
+    .featured-section .item-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px auto;
+      border-radius: 4px;
+    }
+
+    /* Very Short Description for each Item */
+    .featured-section .item-description {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0;
+    }
+  </style>
+  <body>
+    <section class="featured-section">
+      <!-- Main Section Title -->
+      <h2 class="section-title">Our Featured Items</h2>
+
+      <!-- Row of 5 Items -->
+      <div class="items-row">
+        <!-- Item 1 -->
+        <div class="item">
+          <h4 class="item-title">Item 1</h4>
+          <img
+            src="../public/imgs/img-s2-1.jpg"
+            alt="Item 1"
+            class="item-image"
+          />
+          <p class="item-description">Short description 1.</p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="item">
+          <h4 class="item-title">Item 2</h4>
+          <img
+            src="../public/imgs/img-s2-2.jpg"
+            alt="Item 2"
+            class="item-image"
+          />
+          <p class="item-description">Short description 2.</p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="item">
+          <h4 class="item-title">Item 3</h4>
+          <img
+            src="../public/imgs/img-s2-3.jpg"
+            alt="Item 3"
+            class="item-image"
+          />
+          <p class="item-description">Short description 3.</p>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="item">
+          <h4 class="item-title">Item 4</h4>
+          <img src="../public/imgs/img-s2-4.jpg"" alt="Item 4"
+          class="item-image" />
+          <p class="item-description">Short description 4.</p>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="item">
+          <h4 class="item-title">Item 5</h4>
+          <img
+            src="../public/imgs/img-s2-5.jpg"
+            alt="Item 5"
+            class="item-image"
+          />
+          <p class="item-description">Short description 5.</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

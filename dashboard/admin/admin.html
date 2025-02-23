@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <!-- Optional component (e.g., topbar) -->
+    <div id="topbar-sub"></div>
+    <div class="container">
+      <!-- Left Sidebar -->
+      <div class="container-left">
+        <nav class="navbar">
+          <ul id="navbarList">
+            <!-- Sidebar items will be generated dynamically -->
+          </ul>
+        </nav>
+      </div>
+      <!-- Right Content Area -->
+      <div class="container-right">
+        <!-- Admin Dashboard -->
+        <div id="adminDashboard" class="dashboard">
+          <h1>Admin Dashboard</h1>
+          <!-- Combined User Management Section -->
+          <div
+            class="dashboard-section"
+            data-sidebar-title="User Management"
+            id="user-management"
+          >
+            <div class="section-icon">
+              <i class="fa-solid fa-calendar-alt"></i>
+            </div>
+            <div class="section-title">User Management</div>
+
+            <!-- Descriptive Content (original User Management content) -->
+            <div class="section-description">
+              <ul>
+                <li>
+                  View comprehensive lists of patients, doctors, and other
+                  admins.
+                </li>
+                <li>Edit user details and update roles or permissions.</li>
+                <li>Delete or suspend user accounts as needed.</li>
+              </ul>
+            </div>
+            <!-- Section Title (internal title can remain as "User List & Actions" if needed) -->
+            <div class="section-title">User List &amp; Actions</div>
+            <!-- Section Content: Filter and Table -->
+            <div class="section-content">
+              <label for="roleFilter">Filter by Role:</label>
+              <select id="roleFilter" onchange="filterUsers()">
+                <option value="all">All</option>
+                <option value="Admin">Admin</option>
+                <option value="Patient">Patient</option>
+                <option value="Doctor">Doctor</option>
+              </select>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="userTableBody">
+                  <tr data-role="Patient">
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>Patient</td>
+                    <td>john.doe@example.com</td>
+                    <td>
+                      <button onclick="editUser(1)">Edit</button>
+                      <button onclick="deleteUser(1)">Delete</button>
+                      <button onclick="suspendUser(1)">Suspend</button>
+                    </td>
+                  </tr>
+                  <tr data-role="Doctor">
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>Doctor</td>
+                    <td>jane.smith@example.com</td>
+                    <td>
+                      <button onclick="editUser(2)">Edit</button>
+                      <button onclick="deleteUser(2)">Delete</button>
+                      <button onclick="suspendUser(2)">Suspend</button>
+                    </td>
+                  </tr>
+                  <tr data-role="Admin">
+                    <td>3</td>
+                    <td>Admin User</td>
+                    <td>Admin</td>
+                    <td>admin.user@example.com</td>
+                    <td>
+                      <button onclick="editUser(3)">Edit</button>
+                      <button onclick="deleteUser(3)">Delete</button>
+                      <button onclick="suspendUser(3)">Suspend</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Other Admin Sections -->
+          <div class="dashboard-section">
+            <div class="section-icon">
+              <i class="fa-solid fa-calendar-alt"></i>
+            </div>
+            <div class="section-title">Schedule &amp; System Management</div>
+            <div class="section-content">
+              <ul>
+                <li>
+                  Update and manage doctors' working hours and availability.
+                </li>
+                <li>Approve or adjust appointment schedules.</li>
+                <li>Configure system settings and manage access levels.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dashboard-section">
+            <div class="section-icon">
+              <i class="fa-solid fa-user-plus"></i>
+            </div>
+            <div class="section-title">Registration &amp; Administration</div>
+            <div class="section-content">
+              <ul>
+                <li>Create new admin accounts or add new doctor profiles.</li>
+                <li>
+                  Manage registration requests and validate required
+                  information.
+                </li>
+                <li>Set up policies for secure account creation.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dashboard-section">
+            <div class="section-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div class="section-title">Reports &amp; Analytics</div>
+            <div class="section-content">
+              <ul>
+                <li>View appointment statistics and user activity logs.</li>
+                <li>
+                  Generate financial reports and system performance analytics.
+                </li>
+                <li>Monitor usage trends and generate custom reports.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="admin.js"></script>
+  </body>
+</html>

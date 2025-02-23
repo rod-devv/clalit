@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>main-page section 1</title>
+  </head>
+
+  <style>
+    .section-section1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* background: linear-gradient(
+        0deg,
+        rgb(221, 196, 115),
+        rgb(46, 187, 168) 20%,
+        rgb(11, 96, 117)
+      );
+      padding: 40px 0px; */
+      width: 100%;
+      max-width: 1400px;
+    }
+
+    /* LEFT COLUMN */
+    .section1-container-left {
+      flex: 6;
+      /* background: #000; */
+      color: #fff;
+      /* padding: 20px; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .rounded-container-ad {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      padding: 15px;
+      /* margin-top: 10px; */
+      color: #000;
+      min-height: 430px;
+    }
+
+    /* MIDDLE COLUMN */
+    .section1-container-middle {
+      flex: 10;
+      /* background: #f1f1f1; */
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section1-container-middle h2 {
+      color: #ffffff;
+    }
+
+    .middle-items {
+      width: 80%;
+      /* background: #ffffff; */
+
+      flex-wrap: wrap;
+      gap: 20px;
+      border-radius: 10px;
+      display: grid;
+      /* padding: 20px; */
+      grid-template-columns: auto auto auto;
+      gap: 10px; /* space between grid items */
+      min-height: 420px;
+    }
+
+    .middle-item {
+      /* border-radius: 10px; */
+      background: #ffffff;
+      width: 130px;
+      text-align: center;
+      margin-bottom: 15px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .logo-circle {
+      background: lightblue;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 5px auto;
+    }
+
+    /* RIGHT COLUMN */
+    .section1-container-right {
+      flex: 5;
+      /* background: #b90a0a; */
+      padding: 20px;
+      color: #fff;
+    }
+
+    .login-container {
+      background: #fff;
+      color: #000;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .login-container h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .input-info {
+      width: 100%;
+    }
+
+    .underline-input {
+      /* Remove default borders */
+      border: none;
+      /* Add an underline */
+      border-bottom: 1px solid #ccc;
+      /* Make sure it takes full available width */
+      width: 100%;
+      /* Optional: Add padding to prevent text touching the border */
+      padding: 5px 0;
+      /* Remove default focus outline, and optionally add a custom focus style */
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    /* Optional: Change underline color when the input is focused */
+    .floating-container .underline-input:focus {
+      border-bottom-color: #3a73b4;
+    }
+
+    /* Style the input */
+    .floating-container .underline-input {
+      width: 100%;
+      padding: 12px 5px;
+      font-size: 16px;
+      border: none; /* Remove full border */
+      border-bottom: 1px solid #ccc; /* Underline effect */
+      outline: none;
+    }
+
+    /* Style the label so it sits over the input text */
+    .floating-container label {
+      position: absolute;
+      top: 12px;
+      left: 5px;
+      font-size: 16px;
+      color: #aaa;
+      pointer-events: none; /* Allows clicks to focus on the input */
+      transition: all 0.3s ease-out;
+    }
+
+    .form-group {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .form-group label {
+      position: absolute;
+      top: 10px;
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    /* When the input is focused or contains text, float the label up */
+    .floating-container .underline-input:focus + label,
+    .floating-container .underline-input:not(:placeholder-shown) + label {
+      top: -10px;
+      font-size: 12px;
+      color: #3a73b4;
+    }
+
+    .enter-btn {
+      background: #058625;
+
+      border-radius: 20px;
+
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .enter-btn:focus {
+      background: #045a19;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    .form-group small {
+      display: block;
+      text-align: left;
+      margin-top: 3px;
+      color: #555;
+      font-size: 12px;
+    }
+
+    .notice {
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .temp-code {
+      background: #195daa;
+      transition: all 0.3s;
+      border-radius: 20px;
+
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .temp-code:hover {
+      background: rgb(31, 61, 143);
+    }
+  </style>
+  <body>
+    <div class="section-section1">
+      <!-- LEFT COLUMN -->
+      <div class="section1-container-left">
+        <h2>Left Title</h2>
+        <div class="rounded-container-ad">
+          <p>
+            Content inside the rounded containerContent inside the rounded
+            containerContent inside the rounded containerContent inside the
+            rounded containerContent inside the rounded containerContent inside
+            the rounded containerContent inside the rounded containerContent
+            inside the rounded containerContent inside the rounded
+            containerContent ins rounded containerContent inside the rounded de
+            the rounded containerContent inside the rounded containerContent
+            inside the rounded containerContent inside the rounded
+            containerContent inside the rounded containerContent inside the
+            rounded container.
+          </p>
+        </div>
+      </div>
+
+      <!-- MIDDLE COLUMN -->
+      <div class="section1-container-middle">
+        <h2>Middle Title</h2>
+        <div class="middle-items">
+          <!-- Each item is one of the 6 sections -->
+          <div class="middle-item">
+            <div class="logo-circle">
+              <i class="fa fa-star"></i>
+            </div>
+            <p>Short Desc</p>
+          </div>
+          <div class="middle-item">
+            <div class="logo-circle">
+              <i class="fa fa-heart"></i>
+            </div>
+            <p>Icon Desc</p>
+          </div>
+          <div class="middle-item">
+            <div class="logo-circle">
+              <i class="fa fa-cog"></i>
+            </div>
+            <p>Another Desc</p>
+          </div>
+          <div class="middle-item">
+            <div class="logo-circle">
+              <i class="fa fa-music"></i>
+            </div>
+            <p>Music Icon</p>
+          </div>
+          <div class="middle-item">
+            <div class="logo-circle">
+              <i class="fa fa-camera"></i>
+            </div>
+            <p>Photo Icon</p>
+          </div>
+          <div class="middle-item">
+            <div class="logo-circle">
+              <i class="fa fa-globe"></i>
+            </div>
+            <p>Global Icon</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="section1-container-right">
+        <div class="login-container">
+          <h2>Enter to your case</h2>
+          <form>
+            <!-- ID Input -->
+            <div class="form-group floating-container">
+              <input
+                type="text"
+                id="id"
+                name="id"
+                placeholder=" "
+                class="input-info underline-input"
+                required
+              />
+              <label for="id">ID</label>
+            </div>
+
+            <!-- Code User Input -->
+            <div class="form-group floating-container">
+              <input
+                type="text"
+                id="code-user"
+                name="code-user"
+                placeholder=""
+                class="input-info underline-input"
+              />
+              <label for="code-user">Code User</label>
+              <small>forgot code user</small>
+            </div>
+            <!-- Password Input -->
+            <div class="form-group floating-container">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder=""
+                class="input-info underline-input"
+              />
+              <label for="password">Password</label>
+              <small>forgot password</small>
+            </div>
+            <!-- Enter Button -->
+            <button type="submit" class="enter-btn">Enter</button>
+            <!-- Additional Text -->
+            <p class="notice">
+              dont have a password? forgot code and password?
+            </p>
+
+            <div class="line-temp"></div>
+            <!-- <center><hr style="width: 120%" /></center> -->
+            <br />
+            <!-- Temporary Code Button -->
+            <button type="button" class="temp-code">
+              Enter with temporary code
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

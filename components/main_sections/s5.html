@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>main-page section 5</title>
+    <style>
+      /* Container for the four sections */
+      .s5-container2 {
+        width: 100%;
+        max-width: 1200px;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 20px;
+        box-sizing: border-box;
+        
+      }
+      /* Each section */
+      .s5-section2 {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-sizing: border-box;
+        min-height: 200px;
+      }
+      /* For sections in the first row, the image is on the left */
+      .s5-first-row .s5-img-side {
+        order: 1;
+        flex: 1 1 50%;
+      }
+      .s5-first-row .s5-text-side {
+        order: 2;
+        flex: 1 1 50%;
+        padding-left: 20px;
+      }
+      /* For sections in the second row, the image is on the right */
+      .s5-second-row .s5-text-side {
+        order: 1;
+        flex: 1 1 50%;
+        padding-right: 20px;
+      }
+      .s5-second-row .s5-img-side {
+        order: 2;
+        flex: 1 1 50%;
+      }
+      /* Image styling */
+      .s5-img-side img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      /* Text content styling */
+      .s5-small-title {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        color: #555;
+      }
+      .s5-large-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #222;
+      }
+      .s5-description {
+        font-size: 1em;
+        line-height: 1.4em;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Previous container would be here -->
+
+    <!-- New Container for the 4 sections -->
+    <div class="s5-container2">
+      <!-- Section 1 (first row: image left) -->
+      <div class="s5-section2 s5-first-row">
+        <div class="s5-img-side">
+            <img src="../public/imgs/img-s5.jpg" alt="Image 3" />
+        </div>
+        <div class="s5-text-side">
+          <div class="s5-small-title">Small Title 1</div>
+          <div class="s5-large-title">Large Title 1</div>
+          <div class="s5-description">
+            This is a description of the first section that provides essential
+            details in about 15 words.
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2 (first row: image left) -->
+      <div class="s5-section2 s5-first-row">
+        <div class="s5-img-side">
+            <img src="../public/imgs/img-s5.jpg" alt="Image 3" />
+        </div>
+        <div class="s5-text-side">
+          <div class="s5-small-title">Small Title 2</div>
+          <div class="s5-large-title">Large Title 2</div>
+          <div class="s5-description">
+            This is a description of the second section with a brief overview in
+            roughly 15 words.
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3 (second row: image right) -->
+      <div class="s5-section2 s5-second-row">
+        <div class="s5-text-side">
+          <div class="s5-small-title">Small Title 3</div>
+          <div class="s5-large-title">Large Title 3</div>
+          <div class="s5-description">
+            This section’s description explains its content clearly and
+            concisely in approximately 15 words.
+          </div>
+        </div>
+        <div class="s5-img-side">
+          <img src="../public/imgs/img-s5.jpg" alt="Image 3" />
+        </div>
+      </div>
+
+      <!-- Section 4 (second row: image right) -->
+      <div class="s5-section2 s5-second-row">
+        <div class="s5-text-side">
+          <div class="s5-small-title">Small Title 4</div>
+          <div class="s5-large-title">Large Title 4</div>
+          <div class="s5-description">
+            This section’s description offers a brief and clear explanation
+            using about 15 descriptive words.
+          </div>
+        </div>
+        <div class="s5-img-side">
+            <img src="../public/imgs/img-s5.jpg" alt="Image 3" />
+      </div>
+    </div>
+  </body>
+</html>

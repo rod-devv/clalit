@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FAQ - AI Doctor & Hospital App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .search-container {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .search-input {
+        width: 200px;
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 10px;
+
+      }
+      .search-button {
+        color: white;
+        padding: 8px 12px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 10px;
+        border: none;
+        background: #078330;
+        transition: background 0.3s;
+      }
+
+      .search-button:hover{
+
+        background: #a9f9fc;
+      }
+
+
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .faq-item {
+        border-bottom: 1px solid #e0e0e0;
+        padding: 15px 0;
+      }
+
+
+      .faq-question {
+        font-weight: bold;
+        color: #0056b3;
+        cursor: pointer;
+        position: relative;
+
+        padding: 4px;
+
+        transition: background-color 0.3s;
+      }
+      .faq-question:hover {
+        background-color: #f1f1f1;
+
+      }
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        color: #555;
+        margin-top: 8px;
+      }
+      .highlight {
+        background-color: #d0f9ff;
+    </style>
+  </head>
+  <body>
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        class="search-input"
+        placeholder="Search questions..."
+      />
+      <button id="searchBtn" class="search-button">Search</button>
+    </div>
+
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">What is the AI Doctor & Hospital App?</div>
+        <div class="faq-answer">
+          It is a full-stack application that combines an AI-powered chatbot
+          with hospital services to provide preliminary medical guidance and
+          streamline healthcare management.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          How does the AI chatbot function as a doctor?
+        </div>
+        <div class="faq-answer">
+          The chatbot leverages advanced natural language processing and machine
+          learning algorithms to interpret user symptoms, provide initial
+          medical advice, and recommend professional consultations when needed.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Is the AI Doctor a replacement for real medical professionals?
+        </div>
+        <div class="faq-answer">
+          No, it serves as an initial point of contact. It offers basic guidance
+          and triage, but it always recommends consulting with certified
+          healthcare professionals for accurate diagnoses and treatments.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          What hospital services are integrated into the app?
+        </div>
+        <div class="faq-answer">
+          The app integrates services like appointment scheduling, telemedicine
+          consultations, access to patient records, and real-time notifications,
+          all designed to enhance the patient experience.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          How secure is my personal and medical data?
+        </div>
+        <div class="faq-answer">
+          Security is a top priority. The application uses state-of-the-art
+          encryption methods and complies with data protection regulations to
+          ensure your information remains confidential and secure.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Can the AI chatbot diagnose serious conditions?
+        </div>
+        <div class="faq-answer">
+          While the chatbot can identify symptoms and suggest potential
+          conditions, it is not equipped to diagnose serious illnesses. It
+          always advises users to seek further evaluation from medical
+          professionals.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          How do I schedule an appointment through the app?
+        </div>
+        <div class="faq-answer">
+          Appointments can be scheduled directly through the chatbot or via the
+          dedicated appointment section within the app, where you can choose
+          your preferred date, time, and specialist.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          What technologies power this full-stack application?
+        </div>
+        <div class="faq-answer">
+          The app is built with modern frameworks—such as React or Angular for
+          the frontend and Node.js or Django for the backend—and employs AI
+          frameworks like TensorFlow or PyTorch to drive its chatbot
+          functionality.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is there 24/7 support available?</div>
+        <div class="faq-answer">
+          Yes, the AI chatbot provides round-the-clock assistance for basic
+          inquiries, while live support is available during regular business
+          hours for more complex issues.
+        </div>
+      </div>
+      <div class="faq-item" style="border: none">
+        <div class="faq-question">
+          How can I provide feedback or report an issue?
+        </div>
+        <div class="faq-answer">
+          You can use the in-app feedback form or contact our support team
+          directly through the app. Your feedback helps us continuously improve
+          our services.
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Toggle answer dropdown on question click with smooth transition
+      const faqItems = document.querySelectorAll(".faq-item");
+      faqItems.forEach((item) => {
+        const question = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
+
+        question.addEventListener("click", () => {
+          if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+          } else {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          }
+        });
+      });
+
+      // Search functionality to highlight matching questions
+      const searchInput = document.getElementById("searchInput");
+      const searchBtn = document.getElementById("searchBtn");
+
+      searchBtn.addEventListener("click", () => {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        const questions = document.querySelectorAll(".faq-question");
+
+        questions.forEach((q) => {
+          q.classList.remove("highlight");
+          if (searchTerm && q.textContent.toLowerCase().includes(searchTerm)) {
+            q.classList.add("highlight");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
