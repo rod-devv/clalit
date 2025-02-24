@@ -17,9 +17,73 @@
         </p>
       </div>
 
-      <!-- Right Side: Register Form -->
+      <!-- Right Side: Registration Form & Additional Info Container -->
       <div class="right-panel">
-        <div class="register-container">
+        <!-- Doctor Additional Information Container -->
+        <div class="doctor-info-container" id="doctorInfoContainer">
+          <!-- Specialization Dropdown -->
+          <div class="form-group floating-container">
+            <!-- <label for="specialization">Specialization</label> -->
+            <select id="specialization" name="specialization" required>
+              <option value="" disabled selected>Select Specialization</option>
+              <option value="cardiology">Cardiology</option>
+              <option value="dermatology">Dermatology</option>
+              <option value="neurology">Neurology</option>
+              <option value="pediatrics">Pediatrics</option>
+              <option value="general">General</option>
+            </select>
+          </div>
+
+          <!-- Work Location -->
+          <div class="form-group floating-container">
+            <input
+              type="text"
+              id="workLocation"
+              name="workLocation"
+              placeholder=" "
+              required
+            />
+            <label for="workLocation">Work Location</label>
+          </div>
+
+          <!-- Working Hours Section -->
+          <div class="info-section" id="workingHoursSection">
+            <h3 style="text-align: center; margin-bottom: 15px">
+              Working Hours
+            </h3>
+            <div class="input-group">
+              <!-- Day Dropdown -->
+              <select id="daySelect" required>
+                <option value="" disabled selected>Day</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+              </select>
+              <!-- Start Time Input -->
+              <input type="time" id="startTime" step="900" required />
+              <!-- End Time Input -->
+              <input type="time" id="endTime" step="900" required />
+              <!-- Add Button -->
+              <button type="button" id="addWorkingHour">Add</button>
+            </div>
+            <!-- List of Working Hours -->
+            <div class="list-container">
+              <ul id="workingHoursList"></ul>
+            </div>
+          </div>
+
+          <!-- Final Submit Button for Doctor Info -->
+          <button type="button" class="enter-btn" id="submitDoctorInfo">
+            Submit Doctor Info
+          </button>
+        </div>
+
+        <!-- Basic Registration Form -->
+        <div class="register-container" id="basicRegisterContainer">
           <h2>Sign Up</h2>
           <form id="registerForm">
             <!-- idPerson (8-10 characters) -->
@@ -36,7 +100,7 @@
               <label for="idPerson">ID (8-10 chars)</label>
             </div>
 
-            <!-- Fname (3-30 characters) -->
+            <!-- First Name -->
             <div class="form-group floating-container">
               <input
                 type="text"
@@ -50,7 +114,7 @@
               <label for="Fname">First Name</label>
             </div>
 
-            <!-- Lname (3-30 characters) -->
+            <!-- Last Name -->
             <div class="form-group floating-container">
               <input
                 type="text"
@@ -102,18 +166,6 @@
               <label for="password">Password</label>
             </div>
 
-            <!-- DateOfBirth -->
-            <div class="form-group floating-container">
-              <input
-                type="date"
-                id="DateOfBirth"
-                name="DateOfBirth"
-                placeholder=" "
-                required
-              />
-              <label for="DateOfBirth">Date of Birth</label>
-            </div>
-
             <!-- Address -->
             <div class="form-group floating-container">
               <input
@@ -126,70 +178,115 @@
               <label for="address">Address</label>
             </div>
 
-            <!-- Submit Button -->
+            <!-- DateOfBirth -->
+            <div class="form-group floating-container">
+              <input
+                type="date"
+                id="DateOfBirth"
+                name="DateOfBirth"
+                placeholder=" "
+                required
+              />
+              <label for="DateOfBirth">Date of Birth</label>
+            </div>
+
+            <!-- Role Dropdown -->
+            <div class="form-group floating-container">
+              <select id="role" name="role" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="admin">admin</option>
+                <option value="patient">patient</option>
+                <option value="doctor">doctor</option>
+              </select>
+              <!-- <label for="role">Role</label> -->
+            </div>
+
+            <!-- Register Button -->
             <button type="submit" class="enter-btn">Register</button>
             <p id="message"></p>
             <br />
-            <!-- Link to Login -->
-            <a href="./login.html">
-              <button type="button" class="temp-code">
-                Already have an account? Login
-              </button>
-            </a>
           </form>
         </div>
+
+        <!-- Additional Information Container -->
+        <div class="additional-info-container" id="additionalInfoContainer">
+          <!-- General Info Section -->
+          <div class="info-section" id="generalInfo">
+            <h3>General Info</h3>
+            <div class="form-group floating-container">
+              <input
+                type="number"
+                id="height"
+                name="height"
+                placeholder=" "
+                required
+              />
+              <label for="height">Height (cm)</label>
+            </div>
+            <div class="form-group floating-container">
+              <input
+                type="number"
+                id="weight"
+                name="weight"
+                placeholder=" "
+                required
+              />
+              <label for="weight">Weight (kg)</label>
+            </div>
+            <div class="form-group floating-container">
+              <input
+                type="text"
+                id="bloodType"
+                name="bloodType"
+                placeholder=" "
+                required
+              />
+              <label for="bloodType">Blood Type</label>
+            </div>
+          </div>
+
+          <!-- Prescriptions Section -->
+          <div class="info-section" id="prescriptionsSection">
+            <h3>Prescriptions</h3>
+            <div class="input-group">
+              <input
+                type="text"
+                id="prescriptionInput"
+                placeholder="Enter prescription"
+              />
+              <button type="button" id="addPrescription">Add</button>
+            </div>
+            <div class="list-container">
+              <ul id="prescriptionsList"></ul>
+            </div>
+          </div>
+
+          <!-- Diagnosis Section -->
+          <div class="info-section" id="diagnosisSection">
+            <h3>Diagnosis</h3>
+            <div class="input-group">
+              <input
+                type="text"
+                id="diagnosisInput"
+                placeholder="Enter diagnosis"
+              />
+              <button type="button" id="addDiagnosis">Add</button>
+            </div>
+            <div class="list-container">
+              <ul id="diagnosisList"></ul>
+            </div>
+          </div>
+
+          <!-- Final Submission Button -->
+          <button type="button" class="enter-btn" id="submitAdditionalInfo">
+            Submit Additional Info
+          </button>
+        </div>
       </div>
+
+      <!-- ==========================  -->
     </div>
 
-    <!-- JavaScript to handle registration -->
-    <script type="module">
-      // Import the register function from your backend module.
-      // Adjust the import path according to your project structure.
-      import { register } from "./path/to/your/registerModule.js";
-
-      const registerForm = document.getElementById("registerForm");
-      const messageEl = document.getElementById("message");
-
-      registerForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        // Reset message display
-        messageEl.textContent = "";
-
-        // Gather form data
-        const idPerson = document.getElementById("idPerson").value;
-        const Fname = document.getElementById("Fname").value;
-        const Lname = document.getElementById("Lname").value;
-        const email = document.getElementById("email").value;
-        const phone = document.getElementById("phone").value;
-        const password = document.getElementById("password").value;
-        const DateOfBirth = document.getElementById("DateOfBirth").value;
-        const address = document.getElementById("address").value;
-
-        try {
-          // Call the register function with the form data
-          await register({
-            idPerson,
-            Fname,
-            Lname,
-            email,
-            phone,
-            password,
-            DateOfBirth,
-            address,
-          });
-          // If successful, display success message
-          messageEl.textContent = "Registration successful!";
-          messageEl.style.color = "green";
-          // Redirect after 1 second delay (change this URL as needed)
-          setTimeout(() => {
-            window.location.href = "login.html";
-          }, 1000);
-        } catch (error) {
-          // On error, display error message
-          messageEl.textContent = `Error: ${error.message}`;
-          messageEl.style.color = "red";
-        }
-      });
-    </script>
+    <script src="register.js"></script>
   </body>
 </html>
