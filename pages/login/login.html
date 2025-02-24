@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page - medicalai</title>
+    <link rel="stylesheet" href="./login.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Left Side: Title and Description -->
+      <div class="left-panel">
+        <h1>MedicAI</h1>
+        <p>
+          Your trusted partner in medical AI solutions. Empowering healthcare
+          with innovative technology for better outcomes.
+        </p>
+      </div>
+      <!-- Right Side: Login Form -->
+      <div class="right-panel">
+        <div class="login-container">
+          <h2>Enter to your case</h2>
+          <form id="loginForm">
+            <!-- Email Input -->
+            <div class="form-group floating-container">
+              <input type="email" id="id" name="id" placeholder=" " required />
+              <label for="id">Email</label>
+            </div>
+            <!-- Password Input -->
+            <div class="form-group floating-container">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder=" "
+              />
+              <label for="password">Password</label>
+            </div>
+            <!-- Enter Button -->
+            <button type="submit" class="enter-btn">Enter</button>
+            <p id="message"></p>
+            <br />
+            <a href="./register.html">
+              <button type="button" class="temp-code">
+                Don't Have Account? Register
+              </button>
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript to handle login -->
+    <script type="module">
+      // Import the login function from your backend module.
+      // Adjust the import path according to your project structure.
+      import { login } from "./path/to/your/loginModule.js";
+
+      const loginForm = document.getElementById("loginForm");
+      const messageEl = document.getElementById("message");
+
+      loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        // Reset message display
+        messageEl.textContent = "";
+
+        // Gather form data
+        const email = document.getElementById("id").value;
+        const password = document.getElementById("password").value;
+
+        try {
+          // Call the login function with credentials
+          await login({ email, password });
+          // If successful, display success message
+          messageEl.textContent = "Login success";
+          messageEl.style.color = "green";
+          // Redirect after 1 second delay
+          setTimeout(() => {
+            window.location.href = "homepage.html"; // Change this to your homepage URL
+          }, 1000);
+        } catch (error) {
+          // On error, display error message
+          messageEl.textContent = "Invalid username/email or password!";
+          messageEl.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>

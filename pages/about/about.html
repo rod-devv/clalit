@@ -9,72 +9,9 @@
     />
 
     <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="./about.css" />
     <style>
-      /* Base Styles for Dark Mode */
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: #121212;
-        /* color: #e0e0e0; */
-        overflow-x: hidden;
-        background: #fff;
-      }
-      header {
-   
-        padding: 20px;
-        text-align: center;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-      }
 
-      nav {
-        margin-top: 10px;
-      }
-      nav a {
-        color: #fff;
-        margin: 0 10px;
-        text-decoration: none;
-        font-size: 18px;
-        transition: color 0.3s;
-      }
-      nav a:hover {
-        color: #ff4081;
-      }
-      .container {
-        padding: 40px;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-      .section {
-        margin-bottom: 40px;
-      }
-      .section h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-        color: #000000;
-      }
-      .section p {
-        font-size: 18px;
-        line-height: 1.6;
-      }
-      /* AI Style Accent */
-      .ai-style {
-        background: #b4f1fc;
-  
-        padding: 20px;
-        border-radius: 10px;
-        margin: 20px 0;
-      }
-
-
-      #title-about{
-        text-align: center;
-        margin: 0;
-        font-size: 30px;
-        font-weight: bold;
-       margin-top: 100px;
-        color: #000;
-      }
     </style>
   </head>
   <body>
@@ -131,32 +68,6 @@
       <div class="footer" id="footer">
   </body>
 
-  <script>
-
-let path_components = "components/";
-      let sections_folder = "main_sections/";
-
-
-
-    // ------------------- IMPORT COMPONENTS --------------------
-    function load_components() {
-      let arr_components = ["topbar", "footer","sidebar"];
-      for (let i = 0; i < arr_components.length; i++) {
-        let path = "../" + path_components + arr_components[i] + ".html";
-        let name = arr_components[i];
-        import_html(path, name);
-      }
-    }
-
-    // ----- helper function to imports
-    function import_html(path, name) {
-      fetch(path)
-        .then((response) => response.text())
-        .then((html) => {
-          document.getElementById(name).innerHTML = html;
-        });
-    }
-
-    load_components();
+  <script src="about.js">
   </script>
 </html>
