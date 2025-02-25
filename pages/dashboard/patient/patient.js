@@ -170,123 +170,123 @@ function saveMedicalInfo() {
   alert("Medical information saved!");
 }
 
-// Updated fake specialists data: two specialists per expertise
-var fakeSpecialists = [
-  // Cardiology Specialists
-  {
-    id: 1,
-    name: "Dr. Cardio",
-    expertise: "cardiology",
-    address: "123 Heart St",
-    details: "Expert in heart diseases with 15 years of experience.",
-  },
-  {
-    id: 5,
-    name: "Dr. Heart",
-    expertise: "cardiology",
-    address: "222 Heart Ln",
-    details:
-      "Cardiology expert with advanced training in interventional procedures.",
-  },
-  // Neurology Specialists
-  {
-    id: 2,
-    name: "Dr. Neuro",
-    expertise: "neurology",
-    address: "456 Brain Ave",
-    details:
-      "Specialist in neurological disorders with an advanced research background.",
-  },
-  {
-    id: 6,
-    name: "Dr. Brain",
-    expertise: "neurology",
-    address: "789 Neuro St",
-    details:
-      "Leading neurologist known for innovative treatments in neurodegenerative diseases.",
-  },
-  // Dermatology Specialists
-  {
-    id: 3,
-    name: "Dr. Derm",
-    expertise: "dermatology",
-    address: "789 Skin Blvd",
-    details: "Experienced dermatologist focused on skin care and treatment.",
-  },
-  {
-    id: 7,
-    name: "Dr. Skin",
-    expertise: "dermatology",
-    address: "321 Derm Ave",
-    details:
-      "Dermatologist with expertise in cosmetic dermatology and skin cancer prevention.",
-  },
-  // Pediatrics Specialists
-  {
-    id: 4,
-    name: "Dr. Child",
-    expertise: "pediatrics",
-    address: "101 Kid Rd",
-    details: "Pediatrician dedicated to child health and wellness.",
-  },
-  {
-    id: 8,
-    name: "Dr. Kid",
-    expertise: "pediatrics",
-    address: "555 Child Care Rd",
-    details: "Pediatric specialist committed to comprehensive child care.",
-  },
-];
+// // Updated fake specialists data: two specialists per expertise
+// var fakeSpecialists = [
+//   // Cardiology Specialists
+//   {
+//     id: 1,
+//     name: "Dr. Cardio",
+//     expertise: "cardiology",
+//     address: "123 Heart St",
+//     details: "Expert in heart diseases with 15 years of experience.",
+//   },
+//   {
+//     id: 5,
+//     name: "Dr. Heart",
+//     expertise: "cardiology",
+//     address: "222 Heart Ln",
+//     details:
+//       "Cardiology expert with advanced training in interventional procedures.",
+//   },
+//   // Neurology Specialists
+//   {
+//     id: 2,
+//     name: "Dr. Neuro",
+//     expertise: "neurology",
+//     address: "456 Brain Ave",
+//     details:
+//       "Specialist in neurological disorders with an advanced research background.",
+//   },
+//   {
+//     id: 6,
+//     name: "Dr. Brain",
+//     expertise: "neurology",
+//     address: "789 Neuro St",
+//     details:
+//       "Leading neurologist known for innovative treatments in neurodegenerative diseases.",
+//   },
+//   // Dermatology Specialists
+//   {
+//     id: 3,
+//     name: "Dr. Derm",
+//     expertise: "dermatology",
+//     address: "789 Skin Blvd",
+//     details: "Experienced dermatologist focused on skin care and treatment.",
+//   },
+//   {
+//     id: 7,
+//     name: "Dr. Skin",
+//     expertise: "dermatology",
+//     address: "321 Derm Ave",
+//     details:
+//       "Dermatologist with expertise in cosmetic dermatology and skin cancer prevention.",
+//   },
+//   // Pediatrics Specialists
+//   {
+//     id: 4,
+//     name: "Dr. Child",
+//     expertise: "pediatrics",
+//     address: "101 Kid Rd",
+//     details: "Pediatrician dedicated to child health and wellness.",
+//   },
+//   {
+//     id: 8,
+//     name: "Dr. Kid",
+//     expertise: "pediatrics",
+//     address: "555 Child Care Rd",
+//     details: "Pediatric specialist committed to comprehensive child care.",
+//   },
+// ];
 
-function populateSpecialistList(specialists) {
-  const container = document.getElementById("specialistsContainer");
-  container.innerHTML = "";
-  if (specialists.length === 0) {
-    container.innerHTML = "<p>No specialists found.</p>";
-  } else {
-    specialists.forEach(function (spec) {
-      const specDiv = document.createElement("div");
-      specDiv.className = "specialist-item";
-      specDiv.style.cursor = "pointer";
-      specDiv.style.border = "1px solid #ddd";
-      specDiv.style.padding = "10px";
-      specDiv.style.marginBottom = "10px";
-      specDiv.innerHTML = `<p><strong>${spec.name}</strong> - ${spec.expertise} - ${spec.address}</p>`;
-      specDiv.addEventListener("click", function () {
-        showSpecialistDetails(spec);
-      });
-      container.appendChild(specDiv);
-    });
-  }
-}
+// function populateSpecialistList(specialists) {
+//   const container = document.getElementById("specialistsContainer");
+//   container.innerHTML = "";
+//   if (specialists.length === 0) {
+//     container.innerHTML = "<p>No specialists found.</p>";
+//   } else {
+//     specialists.forEach(function (spec) {
+//       const specDiv = document.createElement("div");
+//       specDiv.className = "specialist-item";
+//       specDiv.style.cursor = "pointer";
+//       specDiv.style.border = "1px solid #ddd";
+//       specDiv.style.padding = "10px";
+//       specDiv.style.marginBottom = "10px";
+//       specDiv.innerHTML = `<p><strong>${spec.name}</strong> - ${spec.expertise} - ${spec.address}</p>`;
+//       specDiv.addEventListener("click", function () {
+//         showSpecialistDetails(spec);
+//       });
+//       container.appendChild(specDiv);
+//     });
+//   }
+// }
 
-// Combined function to apply both filters
-function applyFilters() {
-  const expertise = document.getElementById("expertiseSelect").value;
-  const addressQuery = document
-    .getElementById("addressInput")
-    .value.toLowerCase();
-  const filtered = fakeSpecialists.filter(function (spec) {
-    const matchesExpertise = expertise === "" || spec.expertise === expertise;
-    const matchesAddress =
-      addressQuery === "" || spec.address.toLowerCase().includes(addressQuery);
-    return matchesExpertise && matchesAddress;
-  });
-  populateSpecialistList(filtered);
-}
+// // Combined function to apply both filters
+// function applyFilters() {
+//   const expertise = document.getElementById("expertiseSelect").value;
+//   const addressQuery = document
+//     .getElementById("addressInput")
+//     .value.toLowerCase();
+//   const filtered = fakeSpecialists.filter(function (spec) {
+//     const matchesExpertise = expertise === "" || spec.expertise === expertise;
+//     const matchesAddress =
+//       addressQuery === "" || spec.address.toLowerCase().includes(addressQuery);
+//     return matchesExpertise && matchesAddress;
+//   });
+//   populateSpecialistList(filtered);
+// }
 
-function showSpecialistDetails(spec) {
-  const detailsSection = document.getElementById("specialistDetails");
-  const detailsContent = document.getElementById("specialistDetailsContent");
-  detailsContent.innerHTML = `
-      <p><strong>Name:</strong> ${spec.name}</p>
-      <p><strong>Expertise:</strong> ${spec.expertise}</p>
-      <p><strong>Address:</strong> ${spec.address}</p>
-      <p><strong>Details:</strong> ${spec.details}</p>
-    `;
-  detailsSection.style.display = "block";
-}
+// function showSpecialistDetails(spec) {
+//   const detailsSection = document.getElementById("specialistDetails");
+//   const detailsContent = document.getElementById("specialistDetailsContent");
+//   detailsContent.innerHTML = `
+//       <p><strong>Name:</strong> ${spec.name}</p>
+//       <p><strong>Expertise:</strong> ${spec.expertise}</p>
+//       <p><strong>Address:</strong> ${spec.address}</p>
+//       <p><strong>Details:</strong> ${spec.details}</p>
+//     `;
+//   detailsSection.style.display = "block";
+// }
 
-function closeSpecialistDetails() {
-  document.getElementById("specialistDetails").style.display = "none";
-}
+// function closeSpecialistDetails() {
+//   document.getElementById("specialistDetails").style.display = "none";
+// }

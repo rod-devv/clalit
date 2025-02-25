@@ -1,0 +1,74 @@
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+h1,
+h2 {
+  text-align: center;
+}
+.filter {
+  margin: 20px 0;
+  text-align: center;
+}
+.doctor-card {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 5px;
+}
+.doctor-card h3 {
+  margin: 0 0 10px;
+}
+.slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.slot {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  min-width: 120px;
+  text-align: center;
+  position: relative;
+}
+.slot.available {
+  background: #e0ffe0;
+}
+.slot.occupied {
+  background: #ffe0e0;
+}
+.slot.user {
+  background: #e0e0ff;
+}
+button {
+  padding: 5px 10px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+#userAppointments ul {
+  list-style-type: none;
+  padding: 0;
+}
+#userAppointments li {
+  margin: 5px 0;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

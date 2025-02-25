@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="./appointment.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>Appointment Booking System</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Appointment Booking System</h1>
+
+      <!-- Filter Section -->
+      <div class="filter">
+        <!-- <label for="hospitalSelect">Select Hospital:</label>
+        <select id="hospitalSelect">
+          <option value="all">All Hospitals</option>
+        </select> -->
+
+        <label for="hospitalSelect">Select Hospital:</label>
+        <select id="hospitalSelect">
+          <option value="all">All Hospitals</option>
+        </select>
+
+        <label for="expertiseSelect">Select Expertise:</label>
+        <select id="expertiseSelect">
+          <option value="all">All Expertise</option>
+        </select>
+      </div>
+
+      <!-- Available Appointments -->
+      <div id="availableAppointments">
+        <!-- Appointment slots will be rendered here -->
+      </div>
+
+      <!-- User Appointments -->
+      <div id="userAppointments">
+        <h2>Your Appointments</h2>
+        <ul id="appointmentList"></ul>
+      </div>
+    </div>
+
+    <script src="appointment.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- data bases :
+     
+
+    1. appointemnts
+    2. users
+    
+    
+    -->
+    <meta charset="UTF-8" />
+    <title>Doctor Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="doctor.css" />
+  </head>
+  <body>
+    <!-- Topbar -->
+    <div id="topbar">Doctor Dashboard</div>
+    <div class="container">
+      <!-- Left Sidebar -->
+      <div class="container-left">
+        <nav class="navbar">
+          <ul id="navbarList">
+            <li>
+              <a href="#" onclick="showAppointments()"
+                ><i class="fa-solid fa-calendar-check"></i> Appointments</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="showSearchPatient()"
+                ><i class="fa-solid fa-user"></i> Search Patient</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Right Content Area -->
+      <div class="container-right">
+        <div id="dashboardContent" class="dashboard">
+          <!-- Dynamic content loads here -->
+        </div>
+      </div>
+    </div>
+    <script src="doctor.js"></script>
+  </body>
+</html>

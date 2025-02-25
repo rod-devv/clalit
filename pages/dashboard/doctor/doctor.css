@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+#topbar {
+  background: #34495e;
+  color: #ecf0f1;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+.container {
+  display: flex;
+}
+/* Left Sidebar */
+.container-left {
+  width: 220px;
+  background: #2c3e50;
+  min-height: 100vh;
+}
+.container-left nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.container-left nav ul li {
+  border-bottom: 1px solid #34495e;
+}
+.container-left nav ul li a {
+  color: #ecf0f1;
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 16px;
+}
+.container-left nav ul li a:hover {
+  background: #34495e;
+}
+/* Right Content Area */
+.container-right {
+  flex: 1;
+  padding: 20px;
+}
+.dashboard {
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.dashboard h1 {
+  margin-top: 0;
+}
+.dashboard-section {
+  margin-bottom: 30px;
+}
+.dashboard-section .section-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.dashboard-section .section-content {
+  margin-top: 10px;
+}
+/* Appointments Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+table th {
+  background: #f8f8f8;
+}
+.action-buttons button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.action-buttons .update {
+  background: #3498db;
+  color: #fff;
+}
+.action-buttons .cancel {
+  background: #e74c3c;
+  color: #fff;
+}
+/* Search Patient Styles */
+.search-bar {
+  margin-bottom: 20px;
+}
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}

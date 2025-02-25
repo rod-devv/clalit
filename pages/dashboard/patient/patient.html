@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+    <!-- Personal Area  -->
     <meta charset="UTF-8" />
-    <title>Patient Dashboard</title>
+    <title>personal area (Patient Dashboard)</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -52,7 +54,7 @@
       <!-- Right Content Area -->
       <div class="container-right">
         <div id="patientDashboard" class="dashboard active">
-          <h1>Patient Dashboard</h1>
+          <h1>Personal Area</h1>
 
           <!-- Upcoming Appointments Section -->
           <div id="upcomingAppointmentsSection" class="content-section">
@@ -214,39 +216,6 @@
           </div>
 
           <!-- Personal Profile & Medical Information Section -->
-          <!-- <div
-            id="profileSection"
-            class="content-section"
-            style="display: none"
-          >
-            <div class="dashboard-section">
-              <div class="section-icon">
-                <i class="fa-solid fa-user"></i>
-              </div>
-              <div class="section-title">
-                Personal Profile &amp; Medical Information
-              </div>
-              <div class="section-content">
-                <ul>
-                  <li>
-                    Review and update your personal details including contact
-                    info and address.
-                  </li>
-                  <li>
-                    Check your current medications and diagnostics information.
-                  </li>
-                  <li>
-                    View general health statistics such as weight, height, and
-                    more.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- Personal Profile & Medical Information Section -->
-          <!-- Personal Profile & Medical Information Section -->
-          <!-- Personal Profile & Medical Information Section -->
           <div
             id="profileSection"
             class="content-section"
@@ -354,14 +323,14 @@
 
             <!-- New Empty Section for Future Content -->
             <div id="futureSection" class="dashboard-section">
-              <div class="section-title">Additional Information</div>
+              <!-- <div class="section-title">Additional Information</div> -->
               <div class="section-content">
                 <!-- Empty for now; content will be added later -->
               </div>
             </div>
           </div>
 
-          <!-- Make an Appointment Section -->
+       
           <!-- Make an Appointment Section -->
           <div
             id="appointmentSection"
@@ -389,54 +358,11 @@
                   </li>
                 </ul>
               </div>
-            </div>
 
-            <!-- Combined Filter & Search Sub-Section -->
-            <div id="filterSearchSection" class="dashboard-section">
-              <div class="section-title">Filter &amp; Search Specialists</div>
-              <div class="section-content">
-                <select id="expertiseSelect">
-                  <option value="">Select an expertise</option>
-                  <option value="cardiology">Cardiology</option>
-                  <option value="neurology">Neurology</option>
-                  <option value="dermatology">Dermatology</option>
-                  <option value="pediatrics">Pediatrics</option>
-                </select>
-                <input
-                  type="text"
-                  id="addressInput"
-                  placeholder="Enter your address"
-                />
-                <button onclick="applyFilters()">Apply</button>
-              </div>
-            </div>
+              <a href="../../pages/appointment/at.html"><button>See Appointments</button>
+            </div></a>
 
-            <!-- Sub-Section: Specialist List -->
-            <div id="specialistList" class="dashboard-section">
-              <div class="section-title">Available Specialists</div>
-              <div class="section-content">
-                <div id="specialistsContainer">
-                  <!-- Specialist list will be populated here -->
-                </div>
-              </div>
-            </div>
-
-            <!-- Sub-Section: Specialist Details (hidden by default) -->
-            <div
-              id="specialistDetails"
-              class="dashboard-section"
-              style="display: none"
-            >
-              <div class="section-title">Specialist Details</div>
-              <div class="section-content" id="specialistDetailsContent">
-                <!-- Detailed information will appear here -->
-              </div>
-              <button onclick="closeSpecialistDetails()">Close Details</button>
-            </div>
-          </div>
-
-          <!-- (Dynamic appointment details will be inserted below the Show Appointments trigger) -->
-        </div>
+    
       </div>
     </div>
 
