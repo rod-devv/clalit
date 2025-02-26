@@ -2,6 +2,13 @@
 <html lang="en">
   <head>
 
+    <style>
+      .container{
+        background: #000;
+        margin-top: 110px;
+      }
+    </style>
+
     <!-- Personal Area  -->
     <meta charset="UTF-8" />
     <title>personal area (Patient Dashboard)</title>
@@ -12,8 +19,12 @@
     <link rel="stylesheet" href="../dash.css" />
   </head>
   <body>
-    <!-- Optional Topbar -->
-    <div id="topbar-sub"></div>
+    <!------------- TOPBAR --------------->
+    <div class="topbar-sub" id="topbar-sub"></div>
+    <div class="line-temp"></div>
+
+        
+
 
     <div class="container">
       <!-- Left Sidebar (Navigation) -->
@@ -359,12 +370,20 @@
                 </ul>
               </div>
 
+                          <!-- Load the translator script -->
+    <script src="../../translator.js"></script>
+
               <a href="../../pages/appointment/at.html"><button>See Appointments</button>
             </div></a>
 
     
       </div>
+      
     </div>
+  </div>
+</div>
+        <!------------- FOOTER --------------->
+        <div class="footer" id="footer"></div>
 
     <script src="patient.js"></script>
   </body>

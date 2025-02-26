@@ -8,7 +8,7 @@
   <style>
     .section-section1 {
       display: flex;
-      align-items: center;
+      /* align-items: center; */
       justify-content: center;
 
       /* background: linear-gradient(
@@ -16,8 +16,8 @@
         rgb(221, 196, 115),
         rgb(46, 187, 168) 20%,
         rgb(11, 96, 117)
-      );
-      padding: 40px 0px; */
+      /* ); */
+      padding: 0px 20px;
       width: 100%;
       max-width: 1400px;
     }
@@ -34,13 +34,17 @@
     }
 
     .rounded-container-ad {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       background: #fff;
       border: 1px solid #ccc;
       border-radius: 20px;
       padding: 15px;
       /* margin-top: 10px; */
       color: #000;
-      min-height: 430px;
+      min-height: 390px;
     }
 
     /* MIDDLE COLUMN */
@@ -72,23 +76,22 @@
     }
 
     .middle-item {
-      /* border-radius: 10px; */
+      display: flex;
+      align-items: center;
+      padding-top: 20px;
+      flex-direction: column;
       background: #ffffff;
       width: 130px;
       text-align: center;
       margin-bottom: 15px;
       min-height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
     }
 
     .logo-circle {
-      background: lightblue;
+      background: rgb(141, 228, 255);
       border-radius: 50%;
-      width: 60px;
-      height: 60px;
+      width: 90px;
+      height: 90px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -99,7 +102,7 @@
     .section1-container-right {
       flex: 5;
       /* background: #b90a0a; */
-      padding: 20px;
+      /* padding: 20px; */
       color: #fff;
     }
 
@@ -108,6 +111,21 @@
       color: #000;
       padding: 20px;
       border-radius: 10px;
+      height: 390px;
+      width: 270px;
+      transition: background 0.3s;
+    }
+
+    .login-container:hover {
+      background: #a0d4d6;
+    }
+
+    .login-container img {
+      transition: opacity 0.3s ease;
+    }
+
+    .login-container:hover img {
+      opacity: 0.5; /* Adjust opacity as needed */
     }
 
     .login-container h2 {
@@ -156,7 +174,7 @@
       font-size: 16px;
       color: #aaa;
       pointer-events: none; /* Allows clicks to focus on the input */
-      transition: all 0.3s ease-out;
+      transition: all 0.3s;
     }
 
     .form-group {
@@ -237,130 +255,117 @@
     .temp-code:hover {
       background: rgb(31, 61, 143);
     }
+    .rounded-container-ad span {
+      color: #00c2c9;
+      font-weight: bold;
+    }
+
+    .icon-middle {
+      font-size: 50px;
+    }
+
+    .personal-image {
+      height: 360px;
+      width: 270px;
+      object-fit: cover;
+      /* border-radius: 10px; */
+    }
   </style>
   <body>
     <div class="section-section1">
       <!-- LEFT COLUMN -->
       <div class="section1-container-left">
-        <h2>Left Title</h2>
+        <h2>Always with you</h2>
         <div class="rounded-container-ad">
           <p>
-            Content inside the rounded containerContent inside the rounded
-            containerContent inside the rounded containerContent inside the
-            rounded containerContent inside the rounded containerContent inside
-            the rounded containerContent inside the rounded containerContent
-            inside the rounded containerContent inside the rounded
-            containerContent ins rounded containerContent inside the rounded de
-            the rounded containerContent inside the rounded containerContent
-            inside the rounded containerContent inside the rounded
-            containerContent inside the rounded containerContent inside the
-            rounded container.
+            <span>The AI bot</span>, an <span>expert in medical advice</span>,
+            serves as a highly efficient and accessible healthcare companion.
+            Patients use it for <span> instant, reliable </span> guidance on
+            symptoms, treatment options, and preventive care, making it a
+            trusted resource for those seeking prompt answers.
+          </p>
+          <p>
+            This instant access to expert insights empowers patients to make
+            <span> informed decisions</span> and take proactive steps in
+            managing their health. <span> 24/7 availability</span> , ensuring
+            that patients can seek help whenever needed, without the need for
+            appointments or office visits. Ultimately, it offers convenience,
+            <span>speed, and accuracy</span>, making healthcare more accessible
+            to <span>everyone.</span>
           </p>
         </div>
       </div>
 
       <!-- MIDDLE COLUMN -->
       <div class="section1-container-middle">
-        <h2>Middle Title</h2>
+        <h2>For you around the clock 24/7</h2>
         <div class="middle-items">
           <!-- Each item is one of the 6 sections -->
           <div class="middle-item">
             <div class="logo-circle">
-              <i class="fa fa-star"></i>
+              <i
+                class="fa-solid fa-virus icon-middle"
+                style="color: #285c42"
+              ></i>
             </div>
-            <p>Short Desc</p>
+            <p>Against the flu</p>
           </div>
           <div class="middle-item">
             <div class="logo-circle">
-              <i class="fa fa-heart"></i>
+              <i
+                class="fa-solid fa-person icon-middle"
+                style="color: #c5a54c"
+              ></i>
             </div>
-            <p>Icon Desc</p>
+            <p>Mental Health Center</p>
           </div>
           <div class="middle-item">
             <div class="logo-circle">
-              <i class="fa fa-cog"></i>
+              <i
+                class="fa-solid fa-file-waveform icon-middle"
+                style="color: #5b5dd3"
+              ></i>
             </div>
-            <p>Another Desc</p>
+            <p>Medications and Prescriptions</p>
           </div>
           <div class="middle-item">
             <div class="logo-circle">
-              <i class="fa fa-music"></i>
+              <i
+                class="fa-solid fa-user-doctor icon-middle"
+                style="color: #a631aa"
+              ></i>
             </div>
-            <p>Music Icon</p>
+            <p>Direct Access: Doctors Online</p>
           </div>
           <div class="middle-item">
             <div class="logo-circle">
-              <i class="fa fa-camera"></i>
+              <i
+                class="fa-solid fa-house-chimney-user icon-middle"
+                style="color: #b83455"
+              ></i>
             </div>
-            <p>Photo Icon</p>
+            <p>Home Ultrasound</p>
           </div>
           <div class="middle-item">
             <div class="logo-circle">
-              <i class="fa fa-globe"></i>
+              <i
+                class="fa-solid fa-hand-holding-droplet icon-middle"
+                style="color: #1ea1b8"
+              ></i>
             </div>
-            <p>Global Icon</p>
+            <p>Rehabilitation</p>
           </div>
         </div>
       </div>
 
       <!-- RIGHT COLUMN -->
       <div class="section1-container-right">
-        <div class="login-container">
-          <h2>Enter to your case</h2>
-          <form>
-            <!-- ID Input -->
-            <div class="form-group floating-container">
-              <input
-                type="text"
-                id="id"
-                name="id"
-                placeholder=" "
-                class="input-info underline-input"
-                required
-              />
-              <label for="id">ID</label>
-            </div>
-
-            <!-- Code User Input -->
-            <div class="form-group floating-container">
-              <input
-                type="text"
-                id="code-user"
-                name="code-user"
-                placeholder=""
-                class="input-info underline-input"
-              />
-              <label for="code-user">Code User</label>
-              <small>forgot code user</small>
-            </div>
-            <!-- Password Input -->
-            <div class="form-group floating-container">
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder=""
-                class="input-info underline-input"
-              />
-              <label for="password">Password</label>
-              <small>forgot password</small>
-            </div>
-            <!-- Enter Button -->
-            <button type="submit" class="enter-btn">Enter</button>
-            <!-- Additional Text -->
-            <p class="notice">
-              dont have a password? forgot code and password?
-            </p>
-
-            <div class="line-temp"></div>
-            <!-- <center><hr style="width: 120%" /></center> -->
-            <br />
-            <!-- Temporary Code Button -->
-            <button type="button" class="temp-code">
-              Enter with temporary code
-            </button>
-          </form>
-        </div>
+        <h2>Enter your Personal Area</h2>
+        <a href="../../pages/dashboard/patient/patient.html"
+          ><div class="login-container">
+            <img src="../../public/imgs/p4.png" alt="" / class="personal-image">
+          </div>
+        </a>
       </div>
     </div>
   </body>

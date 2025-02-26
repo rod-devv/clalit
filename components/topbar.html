@@ -54,18 +54,20 @@
     }
 
     .topbar-center {
-      flex: 3;
+      /* position: relative; */
+      flex: 2;
       background: #ffffff;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: end;
     }
     .btn1 {
-      background: #3a73b4 !important;
+      /* background: #3a73b4 !important; */
       color: rgb(255, 255, 255);
       transition: background 0.3s;
       font-weight: bold;
       padding: 10px 25px !important;
+      background: #0953a7;
     }
 
     .btn1:hover {
@@ -78,6 +80,7 @@
       color: white;
       transition: background 0.3s;
       font-weight: bold;
+      width: fit-content;
       /* margin: 0 10px; */
       /* padding: 10px; */
     }
@@ -114,6 +117,16 @@
       margin-right: 15px;
       margin-left: 15px;
     }
+
+    .line-temp {
+      position: fixed;
+      background: #2d94bd;
+      height: 1px;
+      width: 100%;
+      top: 100px;
+      left: 0;
+      right: 0;
+    }
   </style>
   <body>
     <div class="topbar">
@@ -124,20 +137,26 @@
         <button class="topside-btn">English</button>
         <button class="topside-btn">עברית</button>
       </div>
-      <div class="topbar-center">
-        <button class="rounded btn1"><i class="fa fa-search"></i></button>
-        <button id="contact" class="rounded btn2">Contact</button>
-        <button class="rounded btn1">Family Center</button>
-      </div>
 
+      <div class="topbar-center">
+        <!-- <button class="rounded btn1"><i class="fa fa-search"></i></button> -->
+        <a href="../contact/contact_us.html">
+          <button id="contact" class="rounded btn2">Contact</button>
+        </a>
+        <a href="#section-section7">
+          <button class="rounded btn1">Family</button>
+        </a>
+      </div>
       <div class="topbar-right">
-        <p id="user-name">Hi, danny dan</p>
+        <p id="user-name">Not Logged in</p>
         <div id="line-col-small"></div>
-        <img src="../public/imgs/logo_2.png" alt="Logo" class="logo" />
+        <a href="../../pages/index/index.html"
+          ><img src="../../public/imgs/logo_2.png" alt="Logo" class="logo"
+        /></a>
         <i class="fa-solid fa-bars sidebar-icon" alt="Logo" id="menu-btn"></i>
       </div>
     </div>
-
+    <div class="line-temp"></div>
     <script></script>
   </body>
 </html>

@@ -15,7 +15,7 @@
             rgba(6, 108, 148, 0.8),
             rgba(8, 110, 141, 0.8)
           ),
-          url("../public/imgs/img-s4.jpg");
+          url("../../public/imgs/img-s4.jpg");
         background-size: cover;
         background-position: center;
       }
@@ -40,22 +40,22 @@
         border: 1px solid #ccc;
         position: relative;
         overflow: hidden;
-        cursor: pointer;
+        /* cursor: pointer; */
         box-sizing: border-box;
         margin: 20px 10px;
         padding: 90px;
         transition: all 0.5s;
       }
-      .s4-section:hover {
+      /* .s4-section:hover {
         border: 1px solid rgba(8, 110, 141, 0.85);
       }
-      /* Default content (icon and description) */
+
       .s4-default-content,
-      /* Hover content (button) */
+  
       .s4-hover-content {
         transition: opacity 0.5s ease;
       }
-      /* Hover content is absolutely positioned on top */
+   
       .s4-hover-content {
         position: absolute;
         top: 0;
@@ -68,16 +68,16 @@
         background-color: rgba(8, 110, 141, 0.85);
         opacity: 0;
       }
-      /* On hover, fade out the default content */
+   
       .s4-section:hover .s4-default-content {
         opacity: 0;
       }
-      /* On hover, fade in the hover content */
+    
       .s4-section:hover .s4-hover-content {
         border: none;
         outline: none;
         opacity: 1;
-      }
+      } */
       /* Icon styling (using placeholder text; replace with actual images or icon fonts as needed) */
       .s4-icon {
         font-size: 3em;
@@ -85,7 +85,8 @@
       /* Description styling */
       .s4-description {
         margin-top: 10px;
-        font-size: 1em;
+        font-size: 40px;
+        color: #ffffff;
       }
       /* Button styling */
       .s4-enter-button {
@@ -106,6 +107,9 @@
       .s4 {
         font-size: 50px;
       }
+
+      .fa-solid {
+      }
     </style>
 
     <link
@@ -116,37 +120,41 @@
   <body>
     <div class="s4-container">
       <!-- Title -->
-      <div class="s4-title">Title</div>
+      <div class="s4-title">Start chatting with medicAI bot now!</div>
       <!-- Row with 3 sections -->
       <div class="s4-row">
         <!-- Section 1 -->
         <div class="s4-section">
           <div class="s4-default-content">
-            <i class="fa-regular fa-folder-open s4"></i>
-            <div class="s4-description">Short description 1</div>
+            <!-- <i class="fa-regular fa-folder-open s4"></i> -->
+            <div class="s4-description">Free</div>
           </div>
           <div class="s4-hover-content">
-            <button class="s4-enter-button">Enter</button>
+            <!-- <button class="s4-enter-button">Enter</button> -->
           </div>
         </div>
         <!-- Section 2 -->
         <div class="s4-section">
           <div class="s4-default-content">
-            <i class="fa-regular fa-folder-open s4"></i>
-            <div class="s4-description">Short description 2</div>
+            <!-- <i class="fa-regular fa-folder-open s4"></i> -->
+            <!-- <i
+              class="fa-solid fa-calendar-check"
+              style="margin-right: 10px"
+            ></i> -->
+            <div class="s4-description">Fast</div>
           </div>
           <div class="s4-hover-content">
-            <button class="s4-enter-button">Enter</button>
+            <!-- <button class="s4-enter-button">Enter</button> -->
           </div>
         </div>
         <!-- Section 3 -->
         <div class="s4-section">
           <div class="s4-default-content">
-            <i class="fa-regular fa-folder-open s4"></i>
-            <div class="s4-description">Short description 3</div>
+            <!-- <i class="fa-regular fa-folder-open s4"></i> -->
+            <div class="s4-description">Expert</div>
           </div>
           <div class="s4-hover-content">
-            <button class="s4-enter-button">Enter</button>
+            <!-- <button class="s4-enter-button">Enter</button> -->
           </div>
         </div>
       </div>

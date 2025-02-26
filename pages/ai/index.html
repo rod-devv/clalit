@@ -18,6 +18,12 @@
       <!-- Sidebar with Chat History -->
       <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
+          <!-- Toggle Sidebar Button -->
+          <a href="../index/index.html"
+            ><button class="home-btn" id="home-icon">
+              <i class="fa-solid fa-house"></i></button
+          ></a>
+
           <button class="new-chat-btn" id="newChatBtn">
             <i class="fa-solid fa-plus"></i>
           </button>
@@ -66,40 +72,6 @@
       // Global object to store conversations by ID.
       const conversationHistory = {};
       let activeConversationId = null;
-
-      // Fake doctor table based on your schema.
-      const doctorTable = [
-        {
-          id: "1",
-          name: "Dr. Alice Johnson",
-          experties: "Cardiology",
-          location: "City Hospital",
-          workingTime: [
-            { day: "Monday", start_time: "09:00", end_time: "16:00" },
-          ],
-          appointments: [],
-        },
-        {
-          id: "2",
-          name: "Dr. Bob Smith",
-          experties: "Neurology",
-          location: "County Hospital",
-          workingTime: [
-            { day: "Tuesday", start_time: "10:00", end_time: "17:00" },
-          ],
-          appointments: [],
-        },
-        {
-          id: "3",
-          name: "Dr. Carol White",
-          experties: "Orthopedics",
-          location: "General Hospital",
-          workingTime: [
-            { day: "Wednesday", start_time: "08:00", end_time: "15:00" },
-          ],
-          appointments: [],
-        },
-      ];
 
       // Chat elements.
       const chatInput = document.getElementById("chatInput");

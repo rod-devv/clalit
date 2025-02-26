@@ -3,7 +3,7 @@ const sections_folder = "main_sections/";
 
 // ---------------- IMPORT SECTIONS/PARTS ------------
 function load_sections() {
-  const arr_sections = ["1", "2", "3", "4", "5", "6", "7"];
+  const arr_sections = ["1", "2", "4", "5", "7"];
   for (let i = 0; i < arr_sections.length; i++) {
     let path =
       "../../" +

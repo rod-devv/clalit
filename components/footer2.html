@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Footer component</title>
+  </head>
+
+  <style>
+    .footer {
+      width: 100%;
+      display: flex;
+      padding: 20px;
+      background: #222;
+      color: white;
+    }
+    .footer-left {
+      display: flex;
+
+      justify-content: flex-end;
+      flex: 7;
+    }
+    .footer-right {
+      display: flex;
+
+      flex-direction: column;
+      /* background-color: #045a19; */
+      align-items: left;
+      margin-left: 30px;
+      margin-top: 40px;
+
+      flex: 5;
+    }
+
+    .social-icons {
+      display: flex;
+    }
+
+    .line-sep {
+      color: #94d0e7;
+      font-weight: bold;
+    }
+
+    .line-col {
+      background: #ffffff;
+      width: 1px;
+      height: 90%;
+      margin-top: 50px;
+    }
+
+    .column {
+      display: flex;
+      align-items: center;
+      /* justify-content: center; */
+      flex-direction: column;
+      margin: 30px 45px;
+    }
+
+    .inst,
+    .face,
+    .tikt,
+    .yout {
+      font-size: 50px;
+
+      color: #000000;
+      transition: color 0.3s;
+      margin: 10px;
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 50%;
+    }
+
+    .inst:hover {
+      color: #9c28ca;
+    }
+
+    .face:hover {
+      color: #1a41c0;
+    }
+
+    .tikt:hover {
+      color: #d19e12;
+    }
+
+    .yout:hover {
+      color: #e22b12;
+    }
+
+    .icondiv {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hr-icons {
+      margin: 30px 0px;
+      align-items: left;
+      max-width: 400px;
+    }
+
+    .bottom-icons {
+      display: flex;
+      /* align-items: center;
+  justify-content: center; */
+      margin-left: 60px;
+    }
+
+    .square {
+      display: flex;
+    }
+
+    .botton-icon-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 10px;
+      color: #000;
+      background: #ffffff;
+      margin: 10px;
+      padding: 10px;
+      /* max-width: 200px; */
+      height: auto; /* Allow the height to expand */
+      width: 100px;
+    }
+
+    .botton-icon-info i {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    .botton-icon-info-p {
+      margin-bottom: 0;
+      font-size: 25px;
+      max-width: 50px;
+    }
+  </style>
+  <body>
+    <div class="footer">
+      <div class="footer-left">
+        <div class="column">
+          <h4>Title 1</h4>
+
+          <p>Item 4</p>
+          <p>Item 2</p>
+
+          <p>Item 3</p>
+          <p>Item 4</p>
+        </div>
+        <!-- <div class="column">
+          <h4>Title 2</h4>
+          <p>Item 1</p>
+          <p>Item 2</p>
+          <p>Item 3</p>
+          <p>Item 4</p>
+          <p>Item 2</p>
+          <p>Item 3</p>
+          <p>Item 4</p>
+          <p>Item 2</p>
+          <p>Item 3</p>
+          <p>Item 4</p>
+        </div>
+        <div class="column">
+          <h4>Title 3</h4>
+          <p>Item 1</p>
+          <p>Item 2</p>
+          <p>Item 3</p>
+
+          <p>Item 3</p>
+          <p>Item 4</p>
+        </div>
+
+        <div class="column">
+          <h4>Title 4</h4>
+          <p>Item 1</p>
+          <p>Item 2</p>
+          <p>Item 3</p>
+          <p>Item 4</p>
+
+          <p>Item 3</p>
+          <p>Item 4</p>
+        </div>
+
+        <div class="column">
+          <h4>Title 5</h4>
+          <p>Item 1</p>
+          <p>Item 2</p>
+          <p>Item 3</p>
+          <p>Item 4</p>
+          <p>Item 2</p>
+          <p>Item 3</p>
+          <p>Item 4</p>
+          <p>Item 2</p>
+          <p>Item 3</p>
+          <p>Item 4</p>
+        </div> -->
+
+        <div class="line-col"></div>
+      </div>
+
+      <div class="footer-right">
+        <div class="social-icons">
+          <div class="icondiv">
+            <i class="fa-brands fa-instagram inst"></i>
+          </div>
+          <div class="icondiv">
+            <i class="fa-brands fa-facebook face"></i>
+          </div>
+          <div class="icondiv"><i class="fa-brands fa-tiktok tikt"></i></div>
+          <div class="icondiv"><i class="fa-brands fa-youtube yout"></i></div>
+        </div>
+        <div class="hr-icons">
+          <hr />
+        </div>
+
+        <div class="bottom-icons">
+          <div class="square">
+            <div class="botton-icon-info">
+              <i class="fa-brands fa-pagelines"></i>
+              <p class="botton-icon-info-p">sasa</p>
+            </div>
+
+            <div class="botton-icon-info">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+              <p class="botton-icon-info-p">sadsd</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

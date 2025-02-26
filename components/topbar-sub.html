@@ -230,12 +230,16 @@
     .part2 {
       margin: 0px 25px;
     }
+
+    .part2 img {
+      height: 90px;
+    }
   </style>
 
   <body>
     <div class="topbar">
       <div class="topbar-left">
-        <p id="exit">exit</p>
+        <a href="../../../pages/index/index.html"><p id="exit">exit</p></a>
         <i class="fa-solid fa-arrow-right-to-bracket icon-exit"></i>
 
         <div id="line-col-small"></div>
@@ -256,7 +260,9 @@
 
         <div id="line-col-small"></div>
 
-        <p id="my-profie-title">My profile</p>
+        <!-- <a href="../../../pages/index/index.html"
+          ><p id="my-profie-title">Home</p></a
+        > -->
       </div>
       <div class="topbar-center">
         <div id="profile-tab">
@@ -273,7 +279,11 @@
         </div>
 
         <div class="part2">
-          <img src="../public/imgs/logo_1.png" alt="Logo" class="logo_2" />
+          <img
+            src="../../../public/imgs/logo_1.png"
+            alt="Logo"
+            class="logo_2"
+          />
         </div>
       </div>
     </div>
@@ -297,6 +307,86 @@
           }
         }
       };
-    </script>
+
+      // // Update date, time, and greeting in real time
+      // function updateTime() {
+      //   var now = new Date();
+      //   var day = now.getDate();
+      //   var month = now.getMonth() + 1;
+      //   var year = now.getFullYear();
+      //   var hours = now.getHours();
+      //   var minutes = now.getMinutes();
+
+      //   // Pad single digits with a leading zero
+      //   day = day < 10 ? "0" + day : day;
+      //   month = month < 10 ? "0" + month : month;
+      //   hours = hours < 10 ? "0" + hours : hours;
+      //   minutes = minutes < 10 ? "0" + minutes : minutes;
+
+      //   // Format the date as DD.MM.YYYY | HH:MM
+      //   var formattedDate =
+      //     day + "." + month + "." + year + " | " + hours + ":" + minutes;
+      //   document.getElementById("title-date").innerText = formattedDate;
+
+      //   // Set greeting based on current hour
+      //   var greeting = "";
+      //   if (hours >= 5 && hours < 12) {
+      //     greeting = "Good Morning";
+      //   } else if (hours >= 12 && hours < 17) {
+      //     greeting = "Good Afternoon";
+      //   } else if (hours >= 17 && hours < 21) {
+      //     greeting = "Good Evening";
+      //   } else {
+      //     greeting = "Good Night";
+      //   }
+      //   document.getElementById("title-time").innerText = greeting;
+      // }
+
+      // // Initial update and then update every second
+      // updateTime();
+      // setInterval(updateTime, 1000);
+
+
+  window.onload = function() {
+    // Update date, time, and greeting in real-time
+    function updateTime() {
+      var now = new Date();
+      var day = now.getDate();
+      var month = now.getMonth() + 1;
+      var year = now.getFullYear();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+
+      // Pad single digits with a leading zero
+      day = day < 10 ? "0" + day : day;
+      month = month < 10 ? "0" + month : month;
+      hours = hours < 10 ? "0" + hours : hours;
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+
+      // Format the date as DD.MM.YYYY | HH:MM
+      var formattedDate =
+        day + "." + month + "." + year + " | " + hours + ":" + minutes;
+      document.getElementById("title-date").innerText = formattedDate;
+
+      // Set greeting based on current hour
+      var greeting = "";
+      if (hours >= 5 && hours < 12) {
+        greeting = "Good Morning";
+      } else if (hours >= 12 && hours < 17) {
+        greeting = "Good Afternoon";
+      } else if (hours >= 17 && hours < 21) {
+        greeting = "Good Evening";
+      } else {
+        greeting = "Good Night";
+      }
+      document.getElementById("title-time").innerText = greeting;
+    }
+
+    // Initial update and then update every second
+    updateTime();
+    setInterval(updateTime, 1000);
+  };
+
+
   </body>
 </html>

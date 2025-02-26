@@ -15,7 +15,7 @@ body {
   background: #2d94bd;
   height: 1px;
   width: 100%;
-  top: 100px;
+  top: 80px;
   left: 0;
   right: 0;
 }
@@ -50,7 +50,8 @@ body {
 #section-section3,
 #section-section4,
 #section-section5,
-#section-section7 {
+#section-section7,
+.footer {
   width: 100%;
 }
 

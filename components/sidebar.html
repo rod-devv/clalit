@@ -41,12 +41,14 @@
         line-height: 1;
         cursor: pointer;
         transition: all 0.3s;
+        background: #d6d6d6;
+        border: none;
       }
       #sb-close-btn:hover {
         background: #94d0e7;
         border-radius: 20%;
-        height: 55px;
-        width: 55px;
+        /* height: 55px;
+        width: 55px; */
       }
       /* Sidebar title */
       #sb-title-sidebar {
@@ -78,12 +80,12 @@
         position: absolute;
         right: 10px;
         top: 50%;
-        transform: translateY(-50%);
+        /* transition: translateY(-50%) 0.3s; */
       }
       /* For options without nested functionality, a simple underline */
-      .sb-option-btn:not(.sb-nested) {
+      /* .sb-option-btn:not(.sb-nested) {
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-      }
+      } */
       /* Nested sidebar styles */
       .sb-nested-sidebar {
         right: -550px; /* Hidden offscreen initially */
@@ -107,19 +109,20 @@
     <!-- Main Sidebar -->
     <div class="sb-sidebar" id="sb-sidebar">
       <button class="sb-close-btn" id="sb-close-btn">&times;</button>
-      <h1 id="sb-title-sidebar">Clalit site</h1>
-      <!-- Option 1: Has nested sidebar -->
-      <button class="sb-option-btn sb-nested" data-target="option1">
-        <span>Option 1</span>
+      <h1 id="sb-title-sidebar">MedicAI site</h1>
+
+      <button class="sb-option-btn" onclick="directDashboard()">
+        - Dashboard
       </button>
-      <!-- Option 2: No nested sidebar -->
-      <button class="sb-option-btn" data-target="option2">Option 2</button>
-      <!-- Option 3: Has nested sidebar -->
-      <button class="sb-option-btn sb-nested" data-target="option3">
-        <span>Option 3</span>
-      </button>
-      <!-- Option 4: No nested sidebar -->
-      <button class="sb-option-btn" data-target="option4">Option 4</button>
+
+      <a href="../ai/index.html"
+        ><button class="sb-option-btn">- Chat With AI</button></a
+      >
+
+      <a href="../login/login.html"
+        ><button class="sb-option-btn">- Log Out</button></a
+      >
+      >
     </div>
 
     <!-- Nested Sidebar for Option 1 -->
@@ -135,5 +138,29 @@
       <h1>Option 3 Details</h1>
       <p>Content related to Option 3 goes here.</p>
     </div>
+
+    <script>
+      function directDashboard() {
+        // Get the current user from local storage (adjust this based on your actual setup)
+        let current_user = localStorage.getItem("current_user") || "admin"; // Replace with actual storage retrieval
+        console.log("current_user:", current_user); // For debugging
+        let page =
+          current_user === "admin"
+            ? "../dashboard/admin/admin.html"
+            : current_user === "doctor"
+            ? "../dashboard/doctor/doctor.html"
+            : "../dashboard/patient/patient.html";
+
+        console.log("Redirecting to:", page); // For debugging
+
+        setTimeout(() => {
+          window.location.href = page; // Redirect after a 1-second delay
+        }, 1000);
+      }
+
+      // function LogOut() {
+      //   /// log out
+      // }
+    </script>
   </body>
 </html>
