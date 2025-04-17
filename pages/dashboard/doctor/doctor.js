@@ -209,7 +209,61 @@ function import_html(path, name) {
     .then((response) => response.text())
     .then((html) => {
       document.getElementById(name).innerHTML = html;
+
+      let id_element = "profie-tab-title";
+
+      if (name === "topbar-sub") {
+        getUserNameAndDisplay(id_element); // Display username
+        updateTime(); // Update time immediately
+        setInterval(updateTime, 1000);
+      }
     });
 }
 
+function getUserNameAndDisplay(x) {
+  const userName = localStorage.getItem("user_name");
+  console.log("user ==> ", userName);
+  if (userName) {
+    // Assign the retrieved user name to the element with id "x"
+    document.getElementById(x).textContent = userName;
+  } else {
+    // If there is no user name in local storage, show a default message
+    document.getElementById(x).textContent = "Not logged in";
+  }
+}
+
 load_components();
+
+// --------------------- Time Update Function ---------------------
+function updateTime() {
+  var now = new Date();
+  var day = now.getDate();
+  var month = now.getMonth() + 1;
+  var year = now.getFullYear();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+
+  // Pad single digits with a leading zero
+  day = day < 10 ? "0" + day : day;
+  month = month < 10 ? "0" + month : month;
+  hours = hours < 10 ? "0" + hours : hours;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+
+  // Format the date as DD.MM.YYYY | HH:MM
+  var formattedDate =
+    day + "." + month + "." + year + " | " + hours + ":" + minutes;
+  document.getElementById("title-date").innerText = formattedDate;
+
+  // Set greeting based on current hour
+  var greeting = "";
+  if (hours >= 5 && hours < 12) {
+    greeting = "Good Morning";
+  } else if (hours >= 12 && hours < 17) {
+    greeting = "Good Afternoon";
+  } else if (hours >= 17 && hours < 21) {
+    greeting = "Good Evening";
+  } else {
+    greeting = "Good Night";
+  }
+  document.getElementById("title-time").innerText = greeting;
+}

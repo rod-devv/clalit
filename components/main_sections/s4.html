@@ -21,7 +21,7 @@
       }
       /* Title styling */
       .s4-title {
-        font-size: 2em;
+        font-size: 40px;
         margin: 20px 0;
         color: white;
       }
@@ -34,50 +34,17 @@
       }
       /* Each section */
       .s4-section {
-        width: 300px;
+        width: 350px;
         height: 300px;
         padding: 20px;
         border: 1px solid #ccc;
         position: relative;
         overflow: hidden;
-        /* cursor: pointer; */
         box-sizing: border-box;
         margin: 20px 10px;
         padding: 90px;
         transition: all 0.5s;
       }
-      /* .s4-section:hover {
-        border: 1px solid rgba(8, 110, 141, 0.85);
-      }
-
-      .s4-default-content,
-  
-      .s4-hover-content {
-        transition: opacity 0.5s ease;
-      }
-   
-      .s4-hover-content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(8, 110, 141, 0.85);
-        opacity: 0;
-      }
-   
-      .s4-section:hover .s4-default-content {
-        opacity: 0;
-      }
-    
-      .s4-section:hover .s4-hover-content {
-        border: none;
-        outline: none;
-        opacity: 1;
-      } */
       /* Icon styling (using placeholder text; replace with actual images or icon fonts as needed) */
       .s4-icon {
         font-size: 3em;
@@ -85,8 +52,18 @@
       /* Description styling */
       .s4-description {
         margin-top: 10px;
-        font-size: 40px;
+        font-size: 30px;
         color: #ffffff;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        height: 100%; /* Ensure it fills the section */
+        width: 100%;
+        transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+        text-align: center;
+        overflow: hidden; /* Prevents text from overflowing outside */
+        word-wrap: break-word; /* Allow words to break to a new line */
+        white-space: normal; /* Allow text to wrap */
       }
       /* Button styling */
       .s4-enter-button {
@@ -102,13 +79,6 @@
       .s4-enter-button:hover {
         background-color: #ffffff;
         color: #007bff;
-      }
-
-      .s4 {
-        font-size: 50px;
-      }
-
-      .fa-solid {
       }
     </style>
 
@@ -126,38 +96,89 @@
         <!-- Section 1 -->
         <div class="s4-section">
           <div class="s4-default-content">
-            <!-- <i class="fa-regular fa-folder-open s4"></i> -->
-            <div class="s4-description">Free</div>
-          </div>
-          <div class="s4-hover-content">
-            <!-- <button class="s4-enter-button">Enter</button> -->
+            <div class="s4-description" id="desc1"></div>
           </div>
         </div>
         <!-- Section 2 -->
         <div class="s4-section">
           <div class="s4-default-content">
-            <!-- <i class="fa-regular fa-folder-open s4"></i> -->
-            <!-- <i
-              class="fa-solid fa-calendar-check"
-              style="margin-right: 10px"
-            ></i> -->
-            <div class="s4-description">Fast</div>
-          </div>
-          <div class="s4-hover-content">
-            <!-- <button class="s4-enter-button">Enter</button> -->
+            <div class="s4-description" id="desc2"></div>
           </div>
         </div>
         <!-- Section 3 -->
         <div class="s4-section">
           <div class="s4-default-content">
-            <!-- <i class="fa-regular fa-folder-open s4"></i> -->
-            <div class="s4-description">Expert</div>
-          </div>
-          <div class="s4-hover-content">
-            <!-- <button class="s4-enter-button">Enter</button> -->
+            <div class="s4-description" id="desc3"></div>
           </div>
         </div>
       </div>
     </div>
+
+    <script>
+      const descriptions = [
+        "Transparent",
+        "24/7 Access",
+        "Free",
+        "User-friendly",
+        "Reliable",
+        "Efficient",
+        "Fast",
+        "Smart",
+        "Latest Tech",
+        "Secure",
+        "Expert",
+        "Convenient",
+        "Innovative",
+        "Scalable",
+        "Easy-to-use",
+        "Time-saving",
+        "Seamless experience",
+        "Cost-effective",
+        "Accessible",
+        "Real-time updates",
+        "High performance",
+        "Data-driven",
+        "Trusted",
+
+        "Interactive",
+        "Automated",
+        "Intuitive",
+        "Multilingual",
+        "Privacy-focused",
+        "Low maintenance",
+        "Cross-platform",
+      ];
+
+      let index = 0;
+
+      function changeDescriptions() {
+        // Fade out the descriptions
+        document.getElementById("desc1").style.opacity = 0;
+        document.getElementById("desc2").style.opacity = 0;
+        document.getElementById("desc3").style.opacity = 0;
+
+        // Wait for the fade out to complete (0.5s transition duration)
+        setTimeout(function () {
+          // Change content for each description div
+          document.getElementById("desc1").textContent =
+            descriptions[index % descriptions.length];
+          document.getElementById("desc2").textContent =
+            descriptions[(index + 1) % descriptions.length];
+          document.getElementById("desc3").textContent =
+            descriptions[(index + 2) % descriptions.length];
+
+          // Fade them back in
+          document.getElementById("desc1").style.opacity = 1;
+          document.getElementById("desc2").style.opacity = 1;
+          document.getElementById("desc3").style.opacity = 1;
+
+          index += 3; // Move to the next set of descriptions
+        }, 500); // Wait for 0.5s before changing text
+      }
+
+      // Run the function immediately and then every 4 seconds
+      changeDescriptions();
+      setInterval(changeDescriptions, 4000);
+    </script>
   </body>
 </html>

@@ -6,17 +6,15 @@
   </head>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     .section-section1 {
       display: flex;
-      /* align-items: center; */
+
       justify-content: center;
 
-      /* background: linear-gradient(
-        0deg,
-        rgb(221, 196, 115),
-        rgb(46, 187, 168) 20%,
-        rgb(11, 96, 117)
-      /* ); */
       padding: 0px 20px;
       width: 100%;
       max-width: 1400px;
@@ -81,7 +79,7 @@
       padding-top: 20px;
       flex-direction: column;
       background: #ffffff;
-      width: 130px;
+      width: 100%;
       text-align: center;
       margin-bottom: 15px;
       min-height: 100px;
@@ -101,8 +99,10 @@
     /* RIGHT COLUMN */
     .section1-container-right {
       flex: 5;
-      /* background: #b90a0a; */
-      /* padding: 20px; */
+      display: flex;
+      /* justify-content: center; */
+      align-items: center;
+      flex-direction: column;
       color: #fff;
     }
 
@@ -266,9 +266,37 @@
 
     .personal-image {
       height: 360px;
-      width: 270px;
+      /* width: 270px; */
+      width: 100%;
       object-fit: cover;
       /* border-radius: 10px; */
+    }
+
+    @media screen and (max-width: 1000px) {
+      .section-section1 {
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-direction: column;
+      }
+
+      .section1-container-middle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+        flex-direction: column;
+      }
+
+      .middle-items {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        border-radius: 10px;
+      }
     }
   </style>
   <body>

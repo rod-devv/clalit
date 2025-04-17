@@ -170,127 +170,6 @@ function saveMedicalInfo() {
   alert("Medical information saved!");
 }
 
-// // Updated fake specialists data: two specialists per expertise
-// var fakeSpecialists = [
-//   // Cardiology Specialists
-//   {
-//     id: 1,
-//     name: "Dr. Cardio",
-//     expertise: "cardiology",
-//     address: "123 Heart St",
-//     details: "Expert in heart diseases with 15 years of experience.",
-//   },
-//   {
-//     id: 5,
-//     name: "Dr. Heart",
-//     expertise: "cardiology",
-//     address: "222 Heart Ln",
-//     details:
-//       "Cardiology expert with advanced training in interventional procedures.",
-//   },
-//   // Neurology Specialists
-//   {
-//     id: 2,
-//     name: "Dr. Neuro",
-//     expertise: "neurology",
-//     address: "456 Brain Ave",
-//     details:
-//       "Specialist in neurological disorders with an advanced research background.",
-//   },
-//   {
-//     id: 6,
-//     name: "Dr. Brain",
-//     expertise: "neurology",
-//     address: "789 Neuro St",
-//     details:
-//       "Leading neurologist known for innovative treatments in neurodegenerative diseases.",
-//   },
-//   // Dermatology Specialists
-//   {
-//     id: 3,
-//     name: "Dr. Derm",
-//     expertise: "dermatology",
-//     address: "789 Skin Blvd",
-//     details: "Experienced dermatologist focused on skin care and treatment.",
-//   },
-//   {
-//     id: 7,
-//     name: "Dr. Skin",
-//     expertise: "dermatology",
-//     address: "321 Derm Ave",
-//     details:
-//       "Dermatologist with expertise in cosmetic dermatology and skin cancer prevention.",
-//   },
-//   // Pediatrics Specialists
-//   {
-//     id: 4,
-//     name: "Dr. Child",
-//     expertise: "pediatrics",
-//     address: "101 Kid Rd",
-//     details: "Pediatrician dedicated to child health and wellness.",
-//   },
-//   {
-//     id: 8,
-//     name: "Dr. Kid",
-//     expertise: "pediatrics",
-//     address: "555 Child Care Rd",
-//     details: "Pediatric specialist committed to comprehensive child care.",
-//   },
-// ];
-
-// function populateSpecialistList(specialists) {
-//   const container = document.getElementById("specialistsContainer");
-//   container.innerHTML = "";
-//   if (specialists.length === 0) {
-//     container.innerHTML = "<p>No specialists found.</p>";
-//   } else {
-//     specialists.forEach(function (spec) {
-//       const specDiv = document.createElement("div");
-//       specDiv.className = "specialist-item";
-//       specDiv.style.cursor = "pointer";
-//       specDiv.style.border = "1px solid #ddd";
-//       specDiv.style.padding = "10px";
-//       specDiv.style.marginBottom = "10px";
-//       specDiv.innerHTML = `<p><strong>${spec.name}</strong> - ${spec.expertise} - ${spec.address}</p>`;
-//       specDiv.addEventListener("click", function () {
-//         showSpecialistDetails(spec);
-//       });
-//       container.appendChild(specDiv);
-//     });
-//   }
-// }
-
-// // Combined function to apply both filters
-// function applyFilters() {
-//   const expertise = document.getElementById("expertiseSelect").value;
-//   const addressQuery = document
-//     .getElementById("addressInput")
-//     .value.toLowerCase();
-//   const filtered = fakeSpecialists.filter(function (spec) {
-//     const matchesExpertise = expertise === "" || spec.expertise === expertise;
-//     const matchesAddress =
-//       addressQuery === "" || spec.address.toLowerCase().includes(addressQuery);
-//     return matchesExpertise && matchesAddress;
-//   });
-//   populateSpecialistList(filtered);
-// }
-
-// function showSpecialistDetails(spec) {
-//   const detailsSection = document.getElementById("specialistDetails");
-//   const detailsContent = document.getElementById("specialistDetailsContent");
-//   detailsContent.innerHTML = `
-//       <p><strong>Name:</strong> ${spec.name}</p>
-//       <p><strong>Expertise:</strong> ${spec.expertise}</p>
-//       <p><strong>Address:</strong> ${spec.address}</p>
-//       <p><strong>Details:</strong> ${spec.details}</p>
-//     `;
-//   detailsSection.style.display = "block";
-// }
-
-// function closeSpecialistDetails() {
-//   document.getElementById("specialistDetails").style.display = "none";
-// }
-
 let path_components = "components/";
 let sections_folder = "main_sections/";
 
@@ -310,7 +189,63 @@ function import_html(path, name) {
     .then((response) => response.text())
     .then((html) => {
       document.getElementById(name).innerHTML = html;
+
+      let id_element = "profie-tab-title";
+
+      if (name === "topbar-sub") {
+        getUserNameAndDisplay(id_element); // Display username
+        updateTime(); // Update time immediately
+        setInterval(updateTime, 1000);
+      }
     });
 }
-
 load_components();
+
+setUserName("rodin");
+
+function getUserNameAndDisplay(x) {
+  const userName = localStorage.getItem("user_name");
+  if (userName) {
+    // Assign the retrieved user name to the element with id "x"
+    document.getElementById(x).textContent = userName;
+  } else {
+    // If there is no user name in local storage, show a default message
+    document.getElementById(x).textContent = "Not logged in";
+  }
+}
+
+// --------------------- Time Update Function ---------------------
+function updateTime() {
+  var now = new Date();
+  var day = now.getDate();
+  var month = now.getMonth() + 1;
+  var year = now.getFullYear();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+
+  // Pad single digits with a leading zero
+  day = day < 10 ? "0" + day : day;
+  month = month < 10 ? "0" + month : month;
+  hours = hours < 10 ? "0" + hours : hours;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+
+  // Format the date as DD.MM.YYYY | HH:MM
+  var formattedDate =
+    day + "." + month + "." + year + " | " + hours + ":" + minutes;
+  document.getElementById("title-date").innerText = formattedDate;
+
+  // Set greeting based on current hour
+  var greeting = "";
+  if (hours >= 5 && hours < 12) {
+    greeting = "Good Morning";
+  } else if (hours >= 12 && hours < 17) {
+    greeting = "Good Afternoon";
+  } else if (hours >= 17 && hours < 21) {
+    greeting = "Good Evening";
+  } else {
+    greeting = "Good Night";
+  }
+  document.getElementById("title-time").innerText = greeting;
+}
+
+//

@@ -15,9 +15,10 @@ body {
   background: #2d94bd;
   height: 1px;
   width: 100%;
-  top: 80px;
+  top: 115px;
   left: 0;
   right: 0;
+  z-index: 40000;
 }
 
 .main-container {

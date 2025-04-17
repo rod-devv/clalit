@@ -31,11 +31,12 @@
       left: 0;
       right: 0;
       display: flex;
-      padding: 15px 0;
+      /* padding: 15px 0; */
       background: #ffffff;
-      padding: 15px 0;
+      /* padding: 15px 0; */
       width: 100vw;
       z-index: 1000;
+      height: 115px;
     }
 
     .topbar-left {
@@ -123,15 +124,80 @@
       background: #2d94bd;
       height: 1px;
       width: 100%;
-      top: 100px;
+      top: 115px;
       left: 0;
       right: 0;
+      z-index: 40000;
+    }
+
+    @media screen and (max-width: 1000px) {
+      .topbar-center {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        /* padding: 15px 0; */
+        background: #ffffff;
+        /* padding: 15px 0; */
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .topbar-left {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      #menu-btn {
+        display: none;
+      }
+
+      .topbar-right {
+        width: 80%;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .topside-btn {
+        font-size: 13px;
+      }
+      /* 
+      .topbar {
+        background: #b32929;
+      } */
+    }
+
+    @media screen and (max-width: 500px) {
+      .topside-btn {
+        font-size: 13px;
+      }
+
+      .logo {
+        display: none;
+      }
+      /* .topbar {
+        background: #b32929;
+      } */
+
+      .line-col-small {
+        border-right: 0px solid rgb(228, 228, 228);
+        height: 30px;
+        margin-right: 0px;
+        margin-left: 0px;
+      }
     }
   </style>
   <body>
     <div class="topbar">
       <div class="topbar-left">
-        <img src="person-icon.png" alt="Profile" class="icon" />
         <button class="topside-btn">العربية</button>
         <button class="topside-btn">Русский</button>
         <button class="topside-btn">English</button>
@@ -153,10 +219,46 @@
         <a href="../../pages/index/index.html"
           ><img src="../../public/imgs/logo_2.png" alt="Logo" class="logo"
         /></a>
-        <i class="fa-solid fa-bars sidebar-icon" alt="Logo" id="menu-btn"></i>
+        <!-- <i class="fa-solid fa-bars sidebar-icon" alt="Logo" id="menu-btn"></i> -->
       </div>
     </div>
     <div class="line-temp"></div>
-    <script></script>
+    <!-- <div class="line-temp"></div> -->
+    <script>
+      function display_username(user_name, id_element) {
+        // Function 1: Set "user_name" in local storage
+        function setUserName(userName) {
+          localStorage.setItem("user_name", userName);
+        }
+
+        // Function 2: Get "user_name" from local storage and assign it to element with id "x"
+        function getUserNameAndDisplay(x) {
+          const userName = localStorage.getItem("user_name");
+          if (userName) {
+            // Assign the retrieved user name to the element with id "x"
+            document.getElementById(x).textContent = userName;
+          } else {
+            // If there is no user name in local storage, show a default message
+            document.getElementById(x).textContent = "Not logged in";
+          }
+        }
+
+        // Function 3: Set "user_name" in local storage to "Not logged in"
+        function setUserNameToNotLoggedIn() {
+          localStorage.setItem("user_name", "Not logged in");
+        }
+
+        // Example usage of the functions:
+
+        setUserName(user_name); //  creates or updates the "user_name" key
+
+        getUserNameAndDisplay(id_element); // assign "user_name" in local storage to  element id="x"
+        // setUserNameToNotLoggedIn(); // assign "user_name" to "Not logged in"
+      }
+
+      let user_name = "dannysadsa dan";
+      let id_element = "user-name";
+      display_username(user_name, id_element); // display name in topbar
+    </script>
   </body>
 </html>

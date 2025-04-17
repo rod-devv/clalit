@@ -82,14 +82,15 @@ document
     // For demonstration purposes, log the full data to the console.
     console.log("Full Registration Data:", fullRegistrationData);
 
-    // You can now call your backend registration function.
-    // Example:
+    // -------- backend registration function ---------
+
     // await register(fullRegistrationData);
 
     // // Show success message and redirect if needed.
     // alert("Registration completed successfully!");
     // window.location.href = "login.html";
 
+    // If doctor, add another information
     if (basicData.role === "doctor") {
       additionalInfoContainer.style.display = "none";
       doctorInfoContainer.style.display = "block";

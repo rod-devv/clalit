@@ -183,17 +183,32 @@ body {
   background: #3e94a0;
 }
 
-.check-icon {
-  background-color: green; /* Green background */
-  border-radius: 50%; /* Fully rounded (circle) */
-  color: white; /* White icon color */
-  display: inline-flex; /* Inline-flex for proper alignment */
+/* .check-icon {
+  background-color: green; 
+ 
+  color: white; 
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px; /* Fixed width */
-  height: 20px; /* Fixed height */
-  margin-right: 5px; /* Space between icon and text */
-  font-size: 12px; /* Adjust icon size as needed */
+  width: 20px; 
+  height: 20px; 
+  margin-right: 5px; 
+  font-size: 12px; 
+} */
+
+.circle-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Same as width to create a perfect circle */
+  background-color: #4caf50; /* Circle background color (green in this case) */
+  border-radius: 50%; /* Makes the div circular */
+}
+
+.check-icon {
+  color: white; /* Icon color */
+  font-size: 15px; /* Adjust the icon size as needed */
 }
 
 #aiChatSection {

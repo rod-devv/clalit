@@ -43,6 +43,7 @@ body {
 .container-right {
   flex: 1;
   padding: 20px;
+  width: ;
 }
 .dashboard {
   background: #fff;
@@ -54,7 +55,10 @@ body {
   margin-top: 0;
 }
 .dashboard-section {
-  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* margin-bottom: 30px; */
 }
 .dashboard-section .section-title {
   font-size: 20px;
@@ -77,12 +81,16 @@ body {
 table {
   width: 100%;
   border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
 }
+
 table th,
 table td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
+  word-wrap: break-word;
 }
 table th {
   background: #f8f8f8;
@@ -110,6 +118,7 @@ table th {
 /* Stats Styles */
 .stats {
   display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 .stat-card {
@@ -129,4 +138,9 @@ table th {
   background: #ffffff;
   padding: 20px;
   margin-bottom: 10px;
+}
+
+.dashboardContent {
+  height: 500px;
+  width: 100%;
 }

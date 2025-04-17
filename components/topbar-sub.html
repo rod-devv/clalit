@@ -239,16 +239,16 @@
   <body>
     <div class="topbar">
       <div class="topbar-left">
-        <a href="../../../pages/index/index.html"><p id="exit">exit</p></a>
+        <a href="../../index/index.html"><p id="exit">exit</p></a>
         <i class="fa-solid fa-arrow-right-to-bracket icon-exit"></i>
 
-        <div id="line-col-small"></div>
+        <!-- <div id="line-col-small"></div> -->
 
-        <div class="dropdown">
+        <!-- <div class="dropdown">
           <button class="dropdown-toggle" onclick="toggleDropdown(event)">
             <i class="fas fa-globe globe-icon"></i>
             <span class="arrow">&#x25BC;</span>
-            <!-- Down arrow -->
+         
           </button>
           <div id="dropdownMenu" class="dropdown-menu">
             <a href="#">العربية</a>
@@ -256,9 +256,9 @@
             <a href="#">English</a>
             <a href="#">עברית</a>
           </div>
-        </div>
+        </div> -->
 
-        <div id="line-col-small"></div>
+        <!-- <div id="line-col-small"></div> -->
 
         <!-- <a href="../../../pages/index/index.html"
           ><p id="my-profie-title">Home</p></a
@@ -266,7 +266,7 @@
       </div>
       <div class="topbar-center">
         <div id="profile-tab">
-          <h1 id="profie-tab-title">koko asdas</h1>
+          <h1 id="profie-tab-title">Not logged in</h1>
         </div>
       </div>
 
@@ -346,47 +346,80 @@
       // updateTime();
       // setInterval(updateTime, 1000);
 
+      window.onload = function () {
+        // Update date, time, and greeting in real-time
+        function updateTime() {
+          var now = new Date();
+          var day = now.getDate();
+          var month = now.getMonth() + 1;
+          var year = now.getFullYear();
+          var hours = now.getHours();
+          var minutes = now.getMinutes();
 
-  window.onload = function() {
-    // Update date, time, and greeting in real-time
-    function updateTime() {
-      var now = new Date();
-      var day = now.getDate();
-      var month = now.getMonth() + 1;
-      var year = now.getFullYear();
-      var hours = now.getHours();
-      var minutes = now.getMinutes();
+          // Pad single digits with a leading zero
+          day = day < 10 ? "0" + day : day;
+          month = month < 10 ? "0" + month : month;
+          hours = hours < 10 ? "0" + hours : hours;
+          minutes = minutes < 10 ? "0" + minutes : minutes;
 
-      // Pad single digits with a leading zero
-      day = day < 10 ? "0" + day : day;
-      month = month < 10 ? "0" + month : month;
-      hours = hours < 10 ? "0" + hours : hours;
-      minutes = minutes < 10 ? "0" + minutes : minutes;
+          // Format the date as DD.MM.YYYY | HH:MM
+          var formattedDate =
+            day + "." + month + "." + year + " | " + hours + ":" + minutes;
+          document.getElementById("title-date").innerText = formattedDate;
 
-      // Format the date as DD.MM.YYYY | HH:MM
-      var formattedDate =
-        day + "." + month + "." + year + " | " + hours + ":" + minutes;
-      document.getElementById("title-date").innerText = formattedDate;
+          // Set greeting based on current hour
+          var greeting = "";
+          if (hours >= 5 && hours < 12) {
+            greeting = "Good Morning";
+          } else if (hours >= 12 && hours < 17) {
+            greeting = "Good Afternoon";
+          } else if (hours >= 17 && hours < 21) {
+            greeting = "Good Evening";
+          } else {
+            greeting = "Good Night";
+          }
+          document.getElementById("title-time").innerText = greeting;
+        }
 
-      // Set greeting based on current hour
-      var greeting = "";
-      if (hours >= 5 && hours < 12) {
-        greeting = "Good Morning";
-      } else if (hours >= 12 && hours < 17) {
-        greeting = "Good Afternoon";
-      } else if (hours >= 17 && hours < 21) {
-        greeting = "Good Evening";
-      } else {
-        greeting = "Good Night";
-      }
-      document.getElementById("title-time").innerText = greeting;
-    }
+        // Initial update and then update every second
+        updateTime();
+        setInterval(updateTime, 1000);
+      };
 
-    // Initial update and then update every second
-    updateTime();
-    setInterval(updateTime, 1000);
-  };
+      // function display_username(user_name, id_element) {
+      //   // Function 1: Set "user_name" in local storage
+      //   function setUserName(userName) {
+      //     localStorage.setItem("user_name", userName);
+      //   }
 
+      //   // Function 2: Get "user_name" from local storage and assign it to element with id "x"
+      //   function getUserNameAndDisplay(x) {
+      //     const userName = localStorage.getItem("user_name");
+      //     if (userName) {
+      //       // Assign the retrieved user name to the element with id "x"
+      //       document.getElementById(x).textContent = userName;
+      //     } else {
+      //       // If there is no user name in local storage, show a default message
+      //       document.getElementById(x).textContent = "Not logged in";
+      //     }
+      //   }
 
+      //   // Function 3: Set "user_name" in local storage to "Not logged in"
+      //   function setUserNameToNotLoggedIn() {
+      //     localStorage.setItem("user_name", "Not logged in");
+      //   }
+
+      //   // Example usage of the functions:
+
+      //   setUserName(user_name); //  creates or updates the "user_name" key
+
+      //   getUserNameAndDisplay(id_element); // assign "user_name" in local storage to  element id="x"
+      //   setUserNameToNotLoggedIn(); // assign "user_name" to "Not logged in"
+      // }
+
+      // let user_name = "current user";
+      // let id_element = "profie-tab-title";
+      // display_username(user_name, id_element); // display name in topbar
+    </script>
   </body>
 </html>

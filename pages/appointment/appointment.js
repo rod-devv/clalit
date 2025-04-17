@@ -14,12 +14,11 @@ let doctors = [
       // {
       //   appointment_time: "09:40",
       //   appointment_id: "apt1",
-      //   byUser: true,
-      // },
+      //
       // {
       //   appointment_time: "14:20",
       //   appointment_id: "apt2",
-      //   byUser: true,
+      //
       // },
     ],
   },
@@ -33,12 +32,12 @@ let doctors = [
       // {
       //   appointment_time: "11:20",
       //   appointment_id: "apt3",
-      //   byUser: true,
+      //
       // },
       // {
       //   appointment_time: "16:00",
       //   appointment_id: "apt4",
-      //   byUser: true,
+      //
       // },
     ],
   },
@@ -53,12 +52,12 @@ let doctors = [
       // {
       //   appointment_time: "09:40",
       //   appointment_id: "apt1",
-      //   byUser: true,
+      //
       // },
       // {
       //   appointment_time: "14:20",
       //   appointment_id: "apt2",
-      //   byUser: true,
+      //
       // },
     ],
   },
@@ -72,12 +71,12 @@ let doctors = [
       // {
       //   appointment_time: "11:20",
       //   appointment_id: "apt3",
-      //   byUser: true,
+      //
       // },
       // {
       //   appointment_time: "16:00",
       //   appointment_id: "apt4",
-      //   byUser: true,
+      //
       // },
     ],
   },
@@ -92,12 +91,12 @@ let doctors = [
       // {
       //   appointment_time: "09:40",
       //   appointment_id: "apt1",
-      //   byUser: true,
+      //
       // },
       // {
       //   appointment_time: "14:20",
       //   appointment_id: "apt2",
-      //   byUser: true,
+      //
       // },
     ],
   },
@@ -111,12 +110,12 @@ let doctors = [
       // {
       //   appointment_time: "11:20",
       //   appointment_id: "apt3",
-      //   byUser: true,
+      //
       // },
       // {
       //   appointment_time: "16:00",
       //   appointment_id: "apt4",
-      //   byUser: true,
+      //
       // },
     ],
   },
@@ -131,12 +130,12 @@ let doctors = [
       // {
       //   appointment_time: "09:40",
       //   appointment_id: "apt1",
-      //   byUser: true,
+      //
       // },
       // {
       //   appointment_time: "14:20",
       //   appointment_id: "apt2",
-      //   byUser: true,
+      //
       // },
     ],
   },
@@ -150,12 +149,12 @@ let doctors = [
       // {
       //   appointment_time: "11:20",
       //   appointment_id: "apt3",
-      //   byUser: true,
+      //
       // },
       // {
       //   appointment_time: "16:00",
       //   appointment_id: "apt4",
-      //   byUser: true,
+      //
       // },
     ],
   },
@@ -189,9 +188,7 @@ function generateSlots(start, end) {
   return slots;
 }
 
-/***********************
- * UI Rendering Logic  *
- ***********************/
+// --------- UI Rendering Logic  ---------------
 
 // Populate the hospital dropdown based on doctor data.
 function populateHospitalDropdown() {
@@ -208,20 +205,6 @@ function populateHospitalDropdown() {
 
 // Render the available appointment slots based on the selected hospital.
 function updateAvailableAppointments() {
-  // const container = document.getElementById("availableAppointments");
-  // container.innerHTML = "";
-  // const selectedHospital =
-  //   document.getElementById("hospitalSelect").value;
-
-  // // Filter doctors by hospital selection.
-  // let filteredDoctors = doctors.filter((doc) => {
-  //   return (
-  //     selectedHospital === "all" || doc.location === selectedHospital
-  //   );
-  // });
-
-  // filteredDoctors.forEach((doc) => {
-
   const container = document.getElementById("availableAppointments");
   container.innerHTML = "";
   const selectedHospital = document.getElementById("hospitalSelect").value;
@@ -318,9 +301,7 @@ function updateUserAppointments() {
   });
 }
 
-/***********************
- * Appointment Actions *
- ***********************/
+//   Appointment Actions
 
 // Function to book an appointment.
 function makeAppointment(doctorId, time) {
@@ -384,9 +365,7 @@ function deleteAppointment(doctorId, appointmentId) {
   updateUserAppointments();
 }
 
-/***********************
- * Initialization      *
- ***********************/
+//-------------------- Initialization      -----------------------//
 
 function populateExpertiseDropdown() {
   const expertiseSelect = document.getElementById("expertiseSelect");
@@ -399,21 +378,6 @@ function populateExpertiseDropdown() {
     expertiseSelect.appendChild(option);
   });
 }
-
-//       document
-//         .getElementById("hospitalSelect")
-//         .addEventListener("change", updateAvailableAppointments);
-
-//       populateHospitalDropdown();
-//       updateAvailableAppointments();
-//       updateUserAppointments();
-
-//       document
-//   .getElementById("expertiseSelect")
-//   .addEventListener("change", updateAvailableAppointments);
-
-// // Call this along with populateHospitalDropdown during initialization
-// populateExpertiseDropdown();
 
 document
   .getElementById("hospitalSelect")
@@ -440,13 +404,41 @@ function load_components() {
   }
 }
 
-// ----- helper function to imports
+// ----- helper function to import HTML -------------
 function import_html(path, name) {
   fetch(path)
     .then((response) => response.text())
     .then((html) => {
       document.getElementById(name).innerHTML = html;
+
+      if (name === "section-section4") {
+        initializeSection4(); // Initialize transitions for section 4
+      }
+
+      // If the topbar is loaded, update the user-name title
+      // if (name === "topbar") {
+      //   setTitle();
+      // }
+
+      // If the topbar is loaded, update the user-name title
+
+      let id_element = "user-name";
+      if (name === "topbar") {
+        getUserNameAndDisplay(id_element); // Ensure this function runs once topbar is loaded
+      }
     });
+}
+
+function getUserNameAndDisplay(x) {
+  const userName = localStorage.getItem("user_name");
+  console.log("user ==> ", userName);
+  if (userName) {
+    // Assign the retrieved user name to the element with id "x"
+    document.getElementById(x).textContent = userName;
+  } else {
+    // If there is no user name in local storage, show a default message
+    document.getElementById(x).textContent = "Not logged in";
+  }
 }
 
 load_components();

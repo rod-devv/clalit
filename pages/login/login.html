@@ -55,7 +55,7 @@
     <script type="module">
       // Import the login function from your backend module.
       // Adjust the import path according to your project structure.
-      import { login } from "./path/to/your/loginModule.js";
+      // import { login } from "./path/to/your/loginModule.js";
 
       const loginForm = document.getElementById("loginForm");
       const messageEl = document.getElementById("message");
@@ -71,13 +71,29 @@
 
         try {
           // Call the login function with credentials
-          await login({ email, password });
+          // let temp_user = await login({ email, password });
           // If successful, display success message
+
+          let temp_user = {
+            Fname: "Rodin",
+            Lname: "Ashmoz",
+          };
+
           messageEl.textContent = "Login success";
           messageEl.style.color = "green";
+
+          localStorage.setItem(
+            "user_name",
+            temp_user.Fname + " " + temp_user.Lname || "Not logged in"
+          );
+
+          const userName = localStorage.getItem("user_name");
+          console.log("userNameEEEEEE=", userName);
+
+          // return;
           // Redirect after 1 second delay
           setTimeout(() => {
-            window.location.href = "homepage.html"; // Change this to your homepage URL
+            window.location.href = "../index/index.html";
           }, 1000);
         } catch (error) {
           // On error, display error message
